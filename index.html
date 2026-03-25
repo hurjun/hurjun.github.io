@@ -671,7 +671,7 @@
       border: 1px solid rgba(100, 255, 218, 0.08);
       margin-bottom: 0.75rem;
       position: relative;
-      aspect-ratio: 16/9;
+      max-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -679,7 +679,8 @@
 
     .gallery-main img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      max-height: 520px;
       object-fit: contain;
       display: block;
     }
@@ -1055,7 +1056,7 @@
     <div class="projects-grid">
 
       <div class="project-card" onclick="openProject('crisk')">
-        <div class="project-thumb"><img src="asset/image.png" alt="CRISK" onerror="this.parentElement.innerHTML='🌍'" /></div>
+        <div class="project-thumb"><img src="asset/crisk.png" alt="CRISK" onerror="this.parentElement.innerHTML='🌍'" /></div>
         <div class="project-name">CRISK — Carbon Risk Platform</div>
         <div class="project-company">@ Niflers</div>
         <p class="project-desc">Full-stack fintech platform for corporate carbon risk analysis with automated data ingestion, MySQL storage, and FastAPI-powered report generation.</p>
@@ -1069,7 +1070,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('credit')">
-        <div class="project-thumb"><img src="asset/Screenshot from 2024-12-18 16-26-47.png" alt="Credit Imbalance Tracker" onerror="this.parentElement.innerHTML='📊'" /></div>
+        <div class="project-thumb"><img src="asset/credit-imbalance.png" alt="Credit Imbalance Tracker" onerror="this.parentElement.innerHTML='📊'" /></div>
         <div class="project-name">Credit Imbalance Tracker</div>
         <div class="project-company">@ Niflers — Used by major banks &amp; asset firms</div>
         <p class="project-desc">Corporate financial health visualization service for banks and asset rating agencies, built under TIPS program constraints with advanced data charts.</p>
@@ -1083,7 +1084,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('credivalue')">
-        <div class="project-thumb"><img src="asset/Screenshot from 2024-12-18 16-27-40.png" alt="Credivalue" onerror="this.parentElement.innerHTML='💹'" /></div>
+        <div class="project-thumb"><img src="asset/credivalue.png" alt="Credivalue" onerror="this.parentElement.innerHTML='💹'" /></div>
         <div class="project-name">Credivalue — Alternative Investment Valuation</div>
         <div class="project-company">@ Niflers — Samil PwC, Seohyun Accounting</div>
         <p class="project-desc">Present-value evaluation platform. Excel upload triggers async processing via AWS Lambda + Step Functions + SQS with full CI/CD pipeline.</p>
@@ -1097,7 +1098,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('hospital-robot')">
-        <div class="project-thumb"><img src="asset/Untitled.jpeg" alt="Hospital Robot" onerror="this.parentElement.innerHTML='🤖'" /></div>
+        <div class="project-thumb"><img src="asset/robot-hyundai.jpeg" alt="Hospital Robot" onerror="this.parentElement.innerHTML='🤖'" /></div>
         <div class="project-name">Hospital Robot Control System</div>
         <div class="project-company">@ Dogugonggan — Hyundai client</div>
         <p class="project-desc">Real-time monitoring and control system for indoor autonomous hospital robots with WebRTC streaming and TTS/STT voice interface.</p>
@@ -1108,7 +1109,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('service-robot')">
-        <div class="project-thumb"><img src="asset/Untitled.png" alt="Service Robot" onerror="this.parentElement.innerHTML='📺'" /></div>
+        <div class="project-thumb"><img src="asset/robot-gseps.png" alt="Service Robot" onerror="this.parentElement.innerHTML='📺'" /></div>
         <div class="project-name">Service Robot Display UI</div>
         <div class="project-company">@ Dogugonggan — SK Hynix, GS EPS</div>
         <p class="project-desc">Touch UI for service robot front displays — info guidance, indoor navigation, and real-time video calling via Zoom SDK.</p>
@@ -1192,8 +1193,8 @@
         company: 'Niflers (Fintech)',
         period: 'Jan 2024 – Present',
         images: [
-          'asset/image.png',
-          'asset/chatbot.png',
+          'asset/crisk.png',
+          'asset/crisk-chatbot.png',
         ],
         description: [
           'CRISK is a fintech platform for <strong>corporate carbon risk analysis</strong>, used by companies and investors to evaluate climate-related financial exposure.',
@@ -1224,7 +1225,7 @@
         company: 'Niflers (Fintech)',
         period: 'Jan 2024 – Present',
         images: [
-          'asset/Screenshot from 2024-12-18 16-26-47.png',
+          'asset/credit-imbalance.png',
         ],
         description: [
           'Credit Imbalance Tracker is a <strong>corporate financial health visualization service</strong> used by major banks and asset rating agencies to monitor financial imbalance indicators.',
@@ -1250,7 +1251,7 @@
         company: 'Niflers (Fintech)',
         period: 'Jan 2024 – Present',
         images: [
-          'asset/Screenshot from 2024-12-18 16-27-40.png',
+          'asset/credivalue.png',
         ],
         description: [
           'Credivalue is a <strong>present-value evaluation platform for alternative investments</strong>, used by major accounting firms including <strong>Samil PwC</strong> and <strong>Seohyun Accounting</strong>.',
@@ -1276,9 +1277,9 @@
         company: 'Dogugonggan — Hyundai client',
         period: 'Jan 2022 – Dec 2023',
         images: [
-          'asset/Untitled.jpeg',
-          'asset/38A9A78D-D63A-4CD1-888B-956572B75F12_1_105_c.jpeg',
-          'asset/Untitled (1).jpeg',
+          'asset/robot-hyundai.jpeg',
+          'asset/robot-seoyeon.jpeg',
+          'asset/robot-hospital-display.jpeg',
         ],
         description: [
           'A real-time monitoring and control platform for <strong>indoor autonomous robots</strong> deployed in hospital environments. Built for the Hyundai client and optimized for medical staff workflows.',
@@ -1305,9 +1306,9 @@
         company: 'Dogugonggan — SK Hynix, GS EPS clients',
         period: 'Jan 2022 – Dec 2023',
         images: [
-          'asset/Untitled.png',
-          'asset/AEBA8F0D-611E-4EC2-821C-3F9F447C0B70.jpeg',
-          'asset/Untitled (2).jpeg',
+          'asset/robot-gseps.png',
+          'asset/robot-skhynix.jpeg',
+          'asset/robot-518.jpeg',
         ],
         description: [
           'A <strong>touch-screen UI for service robot front displays</strong>, enabling user interaction in public and enterprise environments. Deployed across multiple sites for clients including SK Hynix and GS EPS.',
