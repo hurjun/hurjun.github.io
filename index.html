@@ -988,7 +988,7 @@
       <div class="exp-item">
         <div class="exp-period">Jan 2024 –<br>Present</div>
         <div>
-          <div class="exp-role">Backend &amp; Data Infrastructure Developer</div>
+          <div class="exp-role">Solo Full-Stack Developer <span style="color:var(--accent);font-size:0.78rem;font-weight:400;font-family:monospace;">(only developer on the team)</span></div>
           <div class="exp-company"><a href="https://niflers.com/" target="_blank" rel="noopener">Niflers</a> (Fintech)</div>
           <div class="exp-stack">
             <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
@@ -999,6 +999,7 @@
             <span class="stack-tag">React</span><span class="stack-tag">TypeScript</span>
           </div>
           <ul class="exp-bullets">
+            <li><strong>Solely responsible for all web development</strong> — frontend, backend, infrastructure, and deployment with no other developer on the team.</li>
             <li>Designed MySQL schemas and optimized indexing for financial data from <strong>KED and FnGuide</strong>; built daily auto-collection pipelines with Docker + Nginx on Linux.</li>
             <li>Refactored a <strong>20,000+ line monolithic script</strong>, cutting report generation from <strong>10 minutes to 2 minutes</strong>.</li>
             <li>Built a climate-risk report system auto-producing <strong>200,000+ corporate reports</strong> using Pandas, algorithmic optimization, and multiprocessing — scaled from 0 to 100 users.</li>
@@ -1206,7 +1207,7 @@
           'asset/crisk-chatbot.png',
         ],
         description: [
-          'CRISK is a fintech platform for <strong>corporate carbon risk analysis</strong>, used by companies and investors to evaluate climate-related financial exposure.',
+          'CRISK is a fintech platform for <strong>corporate carbon risk analysis</strong>, used by companies and investors to evaluate climate-related financial exposure. I was the <strong>sole developer</strong> — owning the entire stack from database design to frontend delivery.',
           'I built the core data pipeline: financial data is received daily via SMTP as text files from <strong>KED (Korea Evaluation Data)</strong> and <strong>FnGuide</strong>, then processed with Python and Pandas, cleaned, and stored in a <strong>MySQL database</strong> I designed with optimized indexing.',
           'Using this structured financial DB, the system generates <strong>carbon scenario-based future projections</strong> for each company. I developed the FastAPI backend that powers the financial data and report endpoints.',
           'The web service (crisk.co.kr) uses <strong>Spring Boot</strong> for auth, email, and user management, and <strong>FastAPI</strong> for data-science-facing APIs — a split architecture that kept DS team workflows in Python while serving production traffic reliably.',
@@ -1263,7 +1264,7 @@
           'asset/credivalue.png',
         ],
         description: [
-          'Credivalue is a <strong>present-value evaluation platform for alternative investments</strong>, used by major accounting firms including <strong>Samil PwC</strong> and <strong>Seohyun Accounting</strong>.',
+          'Credivalue is a <strong>present-value evaluation platform for alternative investments</strong>, used by major accounting firms including <strong>Samil PwC</strong> and <strong>Seohyun Accounting</strong>. Built and maintained <strong>solely by me</strong> — from infrastructure setup to frontend delivery.',
           'The core user flow: a user uploads an <strong>Excel template</strong> with investment parameters, which triggers an async processing pipeline built on <strong>AWS Lambda + Step Functions + SQS</strong>. Results are returned without blocking the UI.',
           'I designed and maintained the full <strong>CI/CD pipeline</strong> using AWS CodeCommit and CodeDeploy, and set up the infrastructure: <strong>EC2 + RDS (MySQL) + S3</strong>.',
           'The backend uses both <strong>Java Spring</strong> (for business logic and auth) and <strong>FastAPI</strong> (for calculation-heavy endpoints), with <strong>JWT</strong>-based authentication. The frontend is <strong>React + TypeScript</strong> with Bootstrap UI.',
