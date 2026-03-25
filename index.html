@@ -351,6 +351,27 @@
       transform: translateY(-4px);
     }
 
+    .project-thumb {
+      width: 100%;
+      height: 150px;
+      border-radius: 5px;
+      overflow: hidden;
+      background: var(--navy-mid);
+      border: 1px solid rgba(100, 255, 218, 0.08);
+      flex-shrink: 0;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover .project-thumb img { transform: scale(1.04); }
+
     .project-icon { font-size: 1.5rem; }
 
     .project-name {
@@ -998,7 +1019,7 @@
     <div class="projects-grid">
 
       <div class="project-card" onclick="openProject('crisk')">
-        <div class="project-icon">🌍</div>
+        <div class="project-thumb"><img src="asset/image.png" alt="CRISK" onerror="this.parentElement.innerHTML='🌍'" /></div>
         <div class="project-name">CRISK — Carbon Risk Platform</div>
         <div class="project-company">@ Niflers</div>
         <p class="project-desc">Full-stack fintech platform for corporate carbon risk analysis with automated data ingestion, MySQL storage, and FastAPI-powered report generation.</p>
@@ -1009,7 +1030,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('credit')">
-        <div class="project-icon">📊</div>
+        <div class="project-thumb"><img src="asset/Screenshot from 2024-12-18 16-26-47.png" alt="Credit Imbalance Tracker" onerror="this.parentElement.innerHTML='📊'" /></div>
         <div class="project-name">Credit Imbalance Tracker</div>
         <div class="project-company">@ Niflers — Used by major banks &amp; asset firms</div>
         <p class="project-desc">Corporate financial health visualization service for banks and asset rating agencies, built under TIPS program constraints with advanced data charts.</p>
@@ -1020,7 +1041,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('credivalue')">
-        <div class="project-icon">💹</div>
+        <div class="project-thumb"><img src="asset/Screenshot from 2024-12-18 16-27-40.png" alt="Credivalue" onerror="this.parentElement.innerHTML='💹'" /></div>
         <div class="project-name">Credivalue — Alternative Investment Valuation</div>
         <div class="project-company">@ Niflers — Samil PwC, Seohyun Accounting</div>
         <p class="project-desc">Present-value evaluation platform. Excel upload triggers async processing via AWS Lambda + Step Functions + SQS with full CI/CD pipeline.</p>
@@ -1031,7 +1052,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('hospital-robot')">
-        <div class="project-icon">🤖</div>
+        <div class="project-thumb"><img src="asset/Untitled.jpeg" alt="Hospital Robot" onerror="this.parentElement.innerHTML='🤖'" /></div>
         <div class="project-name">Hospital Robot Control System</div>
         <div class="project-company">@ Dogugonggan — Hyundai client</div>
         <p class="project-desc">Real-time monitoring and control system for indoor autonomous hospital robots with WebRTC streaming and TTS/STT voice interface.</p>
@@ -1042,7 +1063,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('service-robot')">
-        <div class="project-icon">📺</div>
+        <div class="project-thumb"><img src="asset/Untitled.png" alt="Service Robot" onerror="this.parentElement.innerHTML='📺'" /></div>
         <div class="project-name">Service Robot Display UI</div>
         <div class="project-company">@ Dogugonggan — SK Hynix, GS EPS</div>
         <p class="project-desc">Touch UI for service robot front displays — info guidance, indoor navigation, and real-time video calling via Zoom SDK.</p>
@@ -1053,7 +1074,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('digital-twin')">
-        <div class="project-icon">⚛️</div>
+        <div class="project-icon">⚛️</div><!-- no screenshot available -->
         <div class="project-name">Nuclear Plant Digital Twin</div>
         <div class="project-company">@ NSG — Korea Water Resources Institute</div>
         <p class="project-desc">C++ digital twin simulation of nuclear power plant thermal-hydraulic calculations, validated with domain engineers.</p>
