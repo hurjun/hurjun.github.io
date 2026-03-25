@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jun Hur</title>
+  <title>Jun Hur — Full-Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,6 +13,7 @@
     :root {
       --navy: #0a192f;
       --navy-light: #112240;
+      --navy-mid: #0d1f38;
       --slate: #8892b0;
       --slate-light: #a8b2d8;
       --white: #e6f1ff;
@@ -40,17 +41,18 @@
       align-items: center;
       padding: 0 3rem;
       height: 70px;
-      background: rgba(10, 25, 47, 0.92);
-      backdrop-filter: blur(8px);
+      background: rgba(10, 25, 47, 0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(100, 255, 218, 0.08);
     }
 
     .nav-logo {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--accent);
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       text-decoration: none;
+      font-family: monospace;
     }
 
     .nav-links {
@@ -62,7 +64,7 @@
     .nav-links a {
       color: var(--slate-light);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.5px;
       transition: color 0.2s;
@@ -72,7 +74,7 @@
 
     /* ── SECTIONS ── */
     section {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 100px 2rem 60px;
     }
@@ -81,7 +83,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--white);
       margin-bottom: 2.5rem;
@@ -91,12 +93,12 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: rgba(100, 255, 218, 0.15);
+      background: rgba(100, 255, 218, 0.12);
     }
 
     .section-number {
       color: var(--accent);
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 400;
       font-family: monospace;
     }
@@ -112,7 +114,7 @@
     .hero-inner {
       display: flex;
       align-items: center;
-      gap: 4rem;
+      gap: 5rem;
       width: 100%;
     }
 
@@ -134,8 +136,8 @@
     }
 
     .hero-title {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 600;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 500;
       color: var(--slate);
       margin-bottom: 1.5rem;
     }
@@ -144,13 +146,13 @@
       max-width: 480px;
       color: var(--slate);
       font-size: 0.95rem;
-      line-height: 1.75;
+      line-height: 1.8;
       margin-bottom: 2rem;
     }
 
     .hero-links {
       display: flex;
-      gap: 1rem;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
 
@@ -158,9 +160,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      padding: 0.65rem 1.4rem;
+      padding: 0.6rem 1.25rem;
       border-radius: 4px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 500;
       text-decoration: none;
       transition: all 0.2s;
@@ -172,12 +174,10 @@
       background: transparent;
     }
 
-    .btn-outline:hover {
-      background: var(--accent-dim);
-    }
+    .btn-outline:hover { background: var(--accent-dim); }
 
     .btn-ghost {
-      border: 1px solid var(--slate);
+      border: 1px solid rgba(168, 178, 216, 0.3);
       color: var(--slate-light);
       background: transparent;
     }
@@ -188,17 +188,14 @@
     }
 
     /* Photo */
-    .hero-photo {
-      flex-shrink: 0;
-    }
+    .hero-photo { flex-shrink: 0; }
 
     .photo-wrapper {
-      width: 220px;
-      height: 220px;
+      width: 230px;
+      height: 230px;
       border-radius: 50%;
       border: 2px solid var(--accent);
       padding: 4px;
-      position: relative;
     }
 
     .photo-wrapper img {
@@ -206,64 +203,75 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center top;
       display: block;
-      background: var(--navy-light);
-    }
-
-    .photo-placeholder {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: var(--navy-light);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      color: var(--slate);
-      font-size: 0.75rem;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .photo-placeholder svg {
-      width: 48px;
-      height: 48px;
-      opacity: 0.4;
     }
 
     /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 200px;
+      gap: 3rem;
+      align-items: start;
+    }
+
     .about-text {
       color: var(--slate);
       font-size: 0.95rem;
-      line-height: 1.8;
+      line-height: 1.85;
       margin-bottom: 1rem;
     }
 
-    .about-text strong {
+    .about-text strong { color: var(--accent); font-weight: 500; }
+
+    .about-highlights {
+      background: var(--navy-light);
+      border: 1px solid rgba(100, 255, 218, 0.08);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .highlight-item {
+      text-align: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.06);
+    }
+
+    .highlight-item:last-child { border-bottom: none; }
+
+    .highlight-num {
+      font-size: 1.6rem;
+      font-weight: 700;
       color: var(--accent);
-      font-weight: 500;
+      line-height: 1;
+    }
+
+    .highlight-label {
+      font-size: 0.72rem;
+      color: var(--slate);
+      margin-top: 0.2rem;
+      line-height: 1.3;
     }
 
     /* ── EXPERIENCE ── */
-    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-list { display: flex; flex-direction: column; }
 
     .exp-item {
       display: grid;
       grid-template-columns: 130px 1fr;
       gap: 0 2rem;
-      padding: 1.5rem 0;
+      padding: 1.75rem 0;
       border-bottom: 1px solid rgba(100, 255, 218, 0.06);
     }
 
     .exp-item:last-child { border-bottom: none; }
 
     .exp-period {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--slate);
       font-family: monospace;
       padding-top: 3px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .exp-role {
@@ -276,22 +284,39 @@
     .exp-company {
       font-size: 0.85rem;
       color: var(--accent);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .stack-tag {
+      font-size: 0.72rem;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(100, 255, 218, 0.15);
+      border-radius: 3px;
+      padding: 0.15rem 0.5rem;
+      font-family: monospace;
     }
 
     .exp-bullets {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.45rem;
     }
 
     .exp-bullets li {
-      font-size: 0.88rem;
+      font-size: 0.875rem;
       color: var(--slate);
-      padding-left: 1.2rem;
+      padding-left: 1.25rem;
       position: relative;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .exp-bullets li::before {
@@ -301,85 +326,156 @@
       color: var(--accent);
     }
 
+    .exp-bullets li strong { color: var(--slate-light); font-weight: 500; }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(100, 255, 218, 0.08);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: rgba(100, 255, 218, 0.25);
+      transform: translateY(-3px);
+    }
+
+    .project-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .project-company {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-family: monospace;
+      margin-top: -0.5rem;
+    }
+
+    .project-desc {
+      font-size: 0.83rem;
+      color: var(--slate);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .project-tags .tag {
+      font-size: 0.7rem;
+      color: var(--slate);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(168, 178, 216, 0.12);
+      border-radius: 3px;
+      padding: 0.15rem 0.45rem;
+      font-family: monospace;
+    }
+
     /* ── SKILLS ── */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.1rem;
     }
 
     .skill-card {
       background: var(--navy-light);
       border: 1px solid rgba(100, 255, 218, 0.08);
       border-radius: 6px;
-      padding: 1.25rem 1.5rem;
+      padding: 1.2rem 1.4rem;
       transition: border-color 0.2s;
     }
 
-    .skill-card:hover { border-color: rgba(100, 255, 218, 0.25); }
+    .skill-card:hover { border-color: rgba(100, 255, 218, 0.22); }
 
     .skill-category {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.7rem;
     }
 
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .tag {
-      font-size: 0.78rem;
+      font-size: 0.77rem;
       color: var(--slate-light);
-      background: rgba(100, 255, 218, 0.06);
-      border: 1px solid rgba(100, 255, 218, 0.12);
+      background: rgba(100, 255, 218, 0.05);
+      border: 1px solid rgba(100, 255, 218, 0.1);
       border-radius: 3px;
-      padding: 0.2rem 0.55rem;
+      padding: 0.2rem 0.5rem;
     }
 
     /* ── EDUCATION ── */
-    .edu-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .edu-list { display: flex; flex-direction: column; gap: 1rem; }
 
     .edu-item {
       background: var(--navy-light);
       border: 1px solid rgba(100, 255, 218, 0.08);
       border-radius: 6px;
-      padding: 1.25rem 1.5rem;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
     }
 
     .edu-degree {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       color: var(--white);
       margin-bottom: 0.2rem;
     }
 
     .edu-school {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--accent);
-      margin-bottom: 0.25rem;
     }
 
     .edu-period {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--slate);
       font-family: monospace;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* ── CONTACT ── */
     #contact { text-align: center; }
 
     .contact-desc {
-      max-width: 500px;
+      max-width: 480px;
       margin: 0 auto 2rem;
       color: var(--slate);
       font-size: 0.95rem;
-      line-height: 1.75;
+      line-height: 1.8;
     }
 
     .contact-links {
@@ -400,27 +496,29 @@
     }
 
     .contact-link:hover { color: var(--accent); }
-
-    .contact-link svg { width: 18px; height: 18px; }
+    .contact-link svg { width: 17px; height: 17px; flex-shrink: 0; }
 
     /* ── FOOTER ── */
     footer {
       text-align: center;
       padding: 2rem;
       color: var(--slate);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       border-top: 1px solid rgba(100, 255, 218, 0.06);
+      margin-top: 2rem;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 640px) {
+    @media (max-width: 680px) {
       nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
       section { padding: 80px 1.5rem 40px; }
       .hero-inner { flex-direction: column-reverse; gap: 2rem; align-items: flex-start; }
       .photo-wrapper { width: 160px; height: 160px; }
-      .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
-      .exp-period { margin-bottom: 0.5rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.3rem; }
+      .exp-period { margin-bottom: 0.4rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .edu-item { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -432,6 +530,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -446,8 +545,10 @@
         <h1 class="hero-name">Jun Hur</h1>
         <h2 class="hero-title">Full-Stack Developer &amp; MS Candidate</h2>
         <p class="hero-desc">
-          Software engineer with 4+ years of industry experience building scalable web systems.
-          Currently pursuing a Master's degree in Computer Science at Chungnam National University.
+          Software engineer with 4+ years of experience building fintech platforms,
+          robot control systems, and data infrastructure. Specializing in Python backends,
+          cloud-native AWS architectures, and React frontends.
+          Currently pursuing a Master's in Computer Science at Chungnam National University.
         </p>
         <div class="hero-links">
           <a href="mailto:hurjun96@gmail.com" class="btn btn-outline">
@@ -466,11 +567,7 @@
       </div>
       <div class="hero-photo">
         <div class="photo-wrapper">
-          <!-- Replace profile.jpg with your actual photo file -->
-          <div class="photo-placeholder" id="photo-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span>Add profile.jpg<br>to show photo</span>
-          </div>
+          <img src="face.jpeg" alt="Jun Hur" />
         </div>
       </div>
     </div>
@@ -479,23 +576,43 @@
   <!-- ABOUT -->
   <section id="about">
     <h2 class="section-title"><span class="section-number">01.</span> About</h2>
-    <p class="about-text">
-      I'm a full-stack developer with over 4 years of professional experience building web applications
-      across finance, robotics, and enterprise domains. My work spans
-      <strong>Python / FastAPI</strong> backends, <strong>React / Next.js</strong> frontends,
-      and cloud-native architectures on <strong>AWS</strong>.
-    </p>
-    <p class="about-text">
-      I've led teams, delivered products for clients like <strong>Hyundai</strong>,
-      <strong>SK Telecom</strong>, and <strong>Samsung Electronics</strong>, and worked on
-      everything from financial calculators to real-time robot control systems.
-      I'm currently pursuing my <strong>Master's degree in Computer Science</strong> at
-      Chungnam National University, deepening my foundations in systems and software engineering.
-    </p>
-    <p class="about-text">
-      Outside of coding, I hold an <strong>OPIc IM3</strong> English certification and enjoy
-      solving problems at the intersection of software infrastructure and real-world applications.
-    </p>
+    <div class="about-grid">
+      <div>
+        <p class="about-text">
+          I'm a full-stack developer with hands-on experience across fintech, robotics, and enterprise domains.
+          At <strong>Niflers</strong>, I built a system that auto-generates <strong>200,000+ corporate climate-risk reports</strong>,
+          reducing generation time from 10 minutes to 2 minutes through algorithmic optimization and multiprocessing.
+        </p>
+        <p class="about-text">
+          My backend work centers on <strong>Python / FastAPI</strong> and <strong>AWS</strong> (ECS, Step Functions, Lambda, S3, RDS),
+          and I'm comfortable across the stack — from MySQL schema design to React + TypeScript frontends.
+          At <strong>Dogugonggan</strong>, I led development of robot control platforms using
+          <strong>WebRTC</strong> and <strong>MQTT</strong>, serving clients like Hyundai and SK Hynix.
+        </p>
+        <p class="about-text">
+          I'm currently pursuing a <strong>Master's degree in Computer Science</strong> at
+          Chungnam National University, building on 4+ years of production engineering experience.
+        </p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="highlight-num">4+</div>
+          <div class="highlight-label">Years of industry experience</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-num">200K+</div>
+          <div class="highlight-label">Corporate reports auto-generated</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-num">5x</div>
+          <div class="highlight-label">Report speed improvement</div>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-num">30+</div>
+          <div class="highlight-label">Robots managed across 10+ sites</div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- EXPERIENCE -->
@@ -504,30 +621,46 @@
     <div class="exp-list">
 
       <div class="exp-item">
-        <div class="exp-period">Jan 2024 –<br>Oct 2025</div>
+        <div class="exp-period">Jan 2024 –<br>Present</div>
         <div>
-          <div class="exp-role">Full-Stack Developer</div>
-          <div class="exp-company">Niflers</div>
+          <div class="exp-role">Backend &amp; Data Infrastructure Developer</div>
+          <div class="exp-company">Niflers (Fintech)</div>
+          <div class="exp-stack">
+            <span class="stack-tag">Python</span><span class="stack-tag">FastAPI</span>
+            <span class="stack-tag">MySQL</span><span class="stack-tag">Pandas</span>
+            <span class="stack-tag">AWS ECS</span><span class="stack-tag">Step Functions</span>
+            <span class="stack-tag">S3 / RDS</span><span class="stack-tag">Docker</span>
+            <span class="stack-tag">Nginx</span><span class="stack-tag">Spring Boot</span>
+            <span class="stack-tag">React</span><span class="stack-tag">TypeScript</span>
+          </div>
           <ul class="exp-bullets">
-            <li>Built financial applications for investment calculations and corporate credit analysis.</li>
-            <li>Developed Python backend with FastAPI and AWS Lambda/SQS for event-driven, scalable architectures.</li>
-            <li>Integrated AWS S3 presigned URLs for secure file handling.</li>
-            <li>Supported frontend with Next.js and reusable MUI component library.</li>
-            <li>Contributed to Spring Boot services and managed the full web development lifecycle independently.</li>
+            <li>Designed MySQL schemas and optimized indexing for financial data received from <strong>KED and FnGuide</strong>; built daily auto-collection pipelines with Docker + Nginx on Linux.</li>
+            <li>Refactored a <strong>20,000+ line monolithic script</strong> into modular components, cutting report generation from <strong>10 minutes to 2 minutes</strong>.</li>
+            <li>Built a climate-risk report generation system that auto-produces <strong>200,000+ corporate reports</strong> using Pandas, algorithmic optimization, and multiprocessing — scaling from 0 to 100 users.</li>
+            <li>Developed backend APIs for <strong>crisk.co.kr</strong>: Spring Boot for auth/email/signup, FastAPI for financial data and report endpoints.</li>
+            <li>Architected <strong>AWS ECS + Step Functions</strong> parallel pipeline for daily financial data ingestion; CI/CD via CodeCommit and CodeDeploy.</li>
+            <li>Used Express.js for rapid service deployment under time-critical deadlines.</li>
           </ul>
         </div>
       </div>
 
       <div class="exp-item">
-        <div class="exp-period">Nov 2021 –<br>May 2023</div>
+        <div class="exp-period">Jan 2022 –<br>Dec 2023</div>
         <div>
-          <div class="exp-role">Web Development Team Lead</div>
-          <div class="exp-company">DOGUGONGGAN Co., Ltd.</div>
+          <div class="exp-role">Robot Control System Developer &amp; Web Lead</div>
+          <div class="exp-company">Dogugonggan (Robot Control)</div>
+          <div class="exp-stack">
+            <span class="stack-tag">React</span><span class="stack-tag">TypeScript</span>
+            <span class="stack-tag">Vue.js</span><span class="stack-tag">WebRTC</span>
+            <span class="stack-tag">MQTT</span><span class="stack-tag">Grafana</span>
+            <span class="stack-tag">MariaDB</span><span class="stack-tag">Python</span>
+          </div>
           <ul class="exp-bullets">
-            <li>Developed a robot management system using WebRTC for real-time video streaming and MQTT for robot control.</li>
-            <li>Designed Grafana dashboards for operational data visualization.</li>
-            <li>Scaled the development team from 1 to 5 engineers.</li>
-            <li>Delivered solutions for major clients: Hyundai, SK Telecom, and Samsung Electronics.</li>
+            <li>Built control platforms managing <strong>30 robots across 10+ locations</strong> — hospital, outdoor, and factory environments — with 5+ specialized UI variants.</li>
+            <li>Implemented <strong>WebRTC video streaming</strong> and <strong>MQTT-based</strong> robot control and sensor monitoring; visualized real-time data via <strong>Grafana dashboards</strong>.</li>
+            <li>Migrated the entire frontend from <strong>Vue.js to React</strong>, standardizing components and improving maintainability across 10+ site-specific deployments.</li>
+            <li>Delivered for major clients: <strong>Hyundai, SK Hynix, GS EPS</strong>.</li>
+            <li>Organized internal dev conferences and study groups on Git, clean code, and engineering culture.</li>
           </ul>
         </div>
       </div>
@@ -537,9 +670,12 @@
         <div>
           <div class="exp-role">Full-Stack Developer</div>
           <div class="exp-company">Mobile Entropy Inc.</div>
+          <div class="exp-stack">
+            <span class="stack-tag">Java Spring</span><span class="stack-tag">Thymeleaf</span>
+            <span class="stack-tag">jQuery</span><span class="stack-tag">OracleDB</span>
+          </div>
           <ul class="exp-bullets">
-            <li>Developed enterprise web solutions using Spring Boot and Thymeleaf.</li>
-            <li>Delivered client-facing applications for Incheon City Gas.</li>
+            <li>Developed and maintained a city gas ERP web service for <strong>Incheon City Gas</strong> using Spring Boot, Thymeleaf, and OracleDB.</li>
           </ul>
         </div>
       </div>
@@ -549,10 +685,119 @@
         <div>
           <div class="exp-role">Freelance Developer</div>
           <div class="exp-company">NSG Co., Ltd.</div>
+          <div class="exp-stack">
+            <span class="stack-tag">C++</span>
+          </div>
           <ul class="exp-bullets">
-            <li>Converted nuclear power plant calculation logic into a C++ digital twin simulation.</li>
-            <li>Collaborated with Korea Water Resources Institute on domain modeling and validation.</li>
+            <li>Converted nuclear power plant calculation logic into a <strong>C++ digital twin</strong> in collaboration with the Korea Water Resources Institute.</li>
           </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="section-title"><span class="section-number">03.</span> Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-icon">🌍</div>
+        <div class="project-name">CRISK — Carbon Risk Platform</div>
+        <div class="project-company">@ Niflers</div>
+        <p class="project-desc">
+          Full-stack fintech platform for corporate carbon risk analysis.
+          Automated daily financial data ingestion via SMTP, processed with Python/Pandas,
+          and stored in MySQL. Generated carbon scenario forecasts via FastAPI.
+          Auth and operations handled by Spring Boot with Redis and Firebase.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span><span class="tag">FastAPI</span>
+          <span class="tag">Spring Boot</span><span class="tag">React</span>
+          <span class="tag">TypeScript</span><span class="tag">MUI</span>
+          <span class="tag">MySQL</span><span class="tag">Redis</span>
+          <span class="tag">Firebase</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <div class="project-name">Credit Imbalance Tracker</div>
+        <div class="project-company">@ Niflers — Used by major banks &amp; asset firms</div>
+        <p class="project-desc">
+          Financial health visualization service for corporate imbalance indicators.
+          Built under tight TIPS program deadline using Next.js + Node.js + MySQL.
+          Used MUI Premium for advanced data visualization; self-hosted with Nginx.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Next.js</span><span class="tag">Node.js</span>
+          <span class="tag">TypeScript</span><span class="tag">MUI Premium</span>
+          <span class="tag">MySQL</span><span class="tag">Nginx</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">💹</div>
+        <div class="project-name">Credivalue — Alternative Investment Valuation</div>
+        <div class="project-company">@ Niflers — Used by Samil PwC, Seohyun Accounting</div>
+        <p class="project-desc">
+          Present-value evaluation platform for alternative investments.
+          Excel upload triggers async processing via AWS Lambda + Step Functions + SQS.
+          Full CI/CD with CodeCommit and CodeDeploy; JWT-based auth.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span>
+          <span class="tag">FastAPI</span><span class="tag">Spring Boot</span>
+          <span class="tag">AWS Lambda</span><span class="tag">Step Functions</span>
+          <span class="tag">SQS</span><span class="tag">EC2/RDS/S3</span>
+          <span class="tag">JWT</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">🤖</div>
+        <div class="project-name">Hospital Robot Control System</div>
+        <div class="project-company">@ Dogugonggan — Hyundai client</div>
+        <p class="project-desc">
+          Real-time monitoring and control system for indoor autonomous robots.
+          WebRTC camera streaming, TTS/STT patient-robot voice interface,
+          real-time location tracking on floor maps, and AI event log visualization.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span>
+          <span class="tag">WebRTC</span><span class="tag">MQTT</span>
+          <span class="tag">React Query</span><span class="tag">ApexCharts</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">📺</div>
+        <div class="project-name">Service Robot Front Display UI</div>
+        <div class="project-company">@ Dogugonggan — SK Hynix, GS EPS clients</div>
+        <p class="project-desc">
+          Touch UI for service robot front displays — information guidance,
+          indoor navigation, and real-time video calling via Zoom SDK.
+          Deployed across multiple enterprise sites.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span>
+          <span class="tag">Zoom SDK</span><span class="tag">WebRTC</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-icon">⚛️</div>
+        <div class="project-name">Nuclear Plant Digital Twin</div>
+        <div class="project-company">@ NSG — Korea Water Resources Institute</div>
+        <p class="project-desc">
+          Converted nuclear power plant thermal-hydraulic calculation logic
+          into a C++ digital twin simulation. Collaborated with domain engineers
+          on model validation and accuracy.
+        </p>
+        <div class="project-tags">
+          <span class="tag">C++</span><span class="tag">Digital Twin</span>
+          <span class="tag">Simulation</span>
         </div>
       </div>
 
@@ -561,7 +806,7 @@
 
   <!-- SKILLS -->
   <section id="skills">
-    <h2 class="section-title"><span class="section-number">03.</span> Skills</h2>
+    <h2 class="section-title"><span class="section-number">04.</span> Skills</h2>
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-category">Languages</div>
@@ -574,28 +819,43 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-category">Frameworks</div>
+        <div class="skill-category">Backend Frameworks</div>
         <div class="skill-tags">
           <span class="tag">FastAPI</span>
           <span class="tag">Spring Boot</span>
-          <span class="tag">Next.js</span>
+          <span class="tag">Express.js</span>
+          <span class="tag">Node.js</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Frontend Frameworks</div>
+        <div class="skill-tags">
           <span class="tag">React</span>
+          <span class="tag">Next.js</span>
           <span class="tag">Vue.js</span>
+          <span class="tag">MUI</span>
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-category">Cloud &amp; Infrastructure</div>
         <div class="skill-tags">
-          <span class="tag">AWS Lambda</span>
-          <span class="tag">AWS SQS</span>
-          <span class="tag">AWS S3</span>
+          <span class="tag">AWS ECS</span>
+          <span class="tag">Step Functions</span>
+          <span class="tag">Lambda</span>
+          <span class="tag">S3 / RDS</span>
+          <span class="tag">EC2</span>
+          <span class="tag">SQS</span>
           <span class="tag">Docker</span>
+          <span class="tag">Nginx</span>
         </div>
       </div>
       <div class="skill-card">
         <div class="skill-category">Databases</div>
         <div class="skill-tags">
           <span class="tag">MySQL</span>
+          <span class="tag">MariaDB</span>
+          <span class="tag">OracleDB</span>
+          <span class="tag">Redis</span>
         </div>
       </div>
       <div class="skill-card">
@@ -604,6 +864,10 @@
           <span class="tag">WebRTC</span>
           <span class="tag">MQTT</span>
           <span class="tag">Grafana</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag">Git</span>
+          <span class="tag">Linux</span>
         </div>
       </div>
     </div>
@@ -611,31 +875,37 @@
 
   <!-- EDUCATION -->
   <section id="education">
-    <h2 class="section-title"><span class="section-number">04.</span> Education</h2>
+    <h2 class="section-title"><span class="section-number">05.</span> Education</h2>
     <div class="edu-list">
       <div class="edu-item">
-        <div class="edu-degree">Master of Science, Computer Science <span style="color:var(--slate);font-weight:400;font-size:0.85rem;">(In Progress)</span></div>
-        <div class="edu-school">Chungnam National University</div>
+        <div>
+          <div class="edu-degree">Master of Science, Computer Science <span style="color:var(--slate);font-size:0.82rem;font-weight:400;">(In Progress)</span></div>
+          <div class="edu-school">Chungnam National University</div>
+        </div>
         <div class="edu-period">2026 – Present</div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">Bachelor of Science, Computer Science</div>
-        <div class="edu-school">Chungnam National University</div>
+        <div>
+          <div class="edu-degree">Bachelor of Science, Computer Science</div>
+          <div class="edu-school">Chungnam National University</div>
+        </div>
         <div class="edu-period">Mar 2016 – Feb 2026</div>
       </div>
       <div class="edu-item">
-        <div class="edu-degree">OPIc IM3 — English Proficiency</div>
-        <div class="edu-school">Certification</div>
+        <div>
+          <div class="edu-degree">OPIc IM3</div>
+          <div class="edu-school">English Proficiency Certification</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <h2 class="section-title" style="justify-content:center;"><span class="section-number">05.</span> Contact</h2>
+    <h2 class="section-title" style="justify-content:center;"><span class="section-number">06.</span> Contact</h2>
     <p class="contact-desc">
-      I'm currently open to research collaborations and graduate opportunities.
-      Feel free to reach out — I'd love to connect.
+      I'm open to research collaborations, graduate opportunities, and interesting engineering challenges.
+      Feel free to reach out.
     </p>
     <div class="contact-links">
       <a href="mailto:hurjun96@gmail.com" class="contact-link">
@@ -654,18 +924,8 @@
   </section>
 
   <footer>
-    <p>Designed &amp; Built by Jun Hur</p>
+    <p>Designed &amp; Built by Jun Hur &nbsp;·&nbsp; hurjun.github.io</p>
   </footer>
-
-  <script>
-    // Auto-detect profile photo if added
-    const img = new Image();
-    img.onload = function() {
-      const container = document.getElementById('photo-container');
-      container.outerHTML = '<img src="profile.jpg" alt="Jun Hur" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">';
-    };
-    img.src = 'profile.jpg';
-  </script>
 
 </body>
 </html>
