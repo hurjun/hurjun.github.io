@@ -1125,6 +1125,7 @@
         company: 'Niflers (Fintech)',
         period: 'Jan 2024 – Present',
         images: [
+          'chatbot.png',
           'img/crisk-1.jpg',
           'img/crisk-2.jpg',
           'img/crisk-3.jpg',
@@ -1134,6 +1135,7 @@
           'I built the core data pipeline: financial data is received daily via SMTP as text files from <strong>KED (Korea Evaluation Data)</strong> and <strong>FnGuide</strong>, then processed with Python and Pandas, cleaned, and stored in a <strong>MySQL database</strong> I designed with optimized indexing.',
           'Using this structured financial DB, the system generates <strong>carbon scenario-based future projections</strong> for each company. I developed the FastAPI backend that powers the financial data and report endpoints.',
           'The web service (crisk.co.kr) uses <strong>Spring Boot</strong> for auth, email, and user management, and <strong>FastAPI</strong> for data-science-facing APIs — a split architecture that kept DS team workflows in Python while serving production traffic reliably.',
+          'I also built a <strong>chatbot feature</strong> integrated into the CRISK platform, allowing users to interactively query financial and carbon risk data through a conversational interface.',
           'I also collaborated closely with the data science team, analyzing their Jupyter notebooks to design new financial DB structures and refactoring a <strong>20,000+ line single script</strong> into a modular report engine — reducing generation time from <strong>10 minutes to 2 minutes</strong>.',
         ],
         features: [
@@ -1145,8 +1147,9 @@
           '<strong>React + TypeScript + MUI</strong> frontend with data visualization',
           '<strong>Redis</strong> caching and <strong>Firebase</strong> for operational services',
           'Data science collaboration — restructured DB from Jupyter prototype to production schema',
+          '<strong>Chatbot</strong> — conversational interface for querying financial and carbon risk data',
         ],
-        stack: ['Python', 'FastAPI', 'Spring Boot', 'React', 'TypeScript', 'MUI', 'MySQL', 'Pandas', 'Redis', 'Firebase', 'Docker', 'Nginx', 'Linux'],
+        stack: ['Python', 'FastAPI', 'Spring Boot', 'React', 'TypeScript', 'MUI', 'MySQL', 'Pandas', 'Redis', 'Firebase', 'Docker', 'Nginx', 'Linux', 'Chatbot'],
       },
 
       credit: {
