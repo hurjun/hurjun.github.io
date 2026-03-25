@@ -13,7 +13,6 @@
     :root {
       --navy: #0a192f;
       --navy-light: #112240;
-      --navy-mid: #0d1f38;
       --slate: #8892b0;
       --slate-light: #a8b2d8;
       --white: #e6f1ff;
@@ -29,6 +28,7 @@
       background: var(--navy);
       color: var(--slate-light);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* ── NAV ── */
@@ -44,6 +44,7 @@
       background: rgba(10, 25, 47, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+      transition: opacity 0.2s;
     }
 
     .nav-logo {
@@ -72,7 +73,7 @@
 
     .nav-links a:hover { color: var(--accent); }
 
-    /* ── SECTIONS ── */
+    /* ── MAIN SECTIONS ── */
     section {
       max-width: 960px;
       margin: 0 auto;
@@ -182,12 +183,8 @@
       background: transparent;
     }
 
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* Photo */
     .hero-photo { flex-shrink: 0; }
 
     .photo-wrapper {
@@ -328,7 +325,7 @@
 
     .exp-bullets li strong { color: var(--slate-light); font-weight: 500; }
 
-    /* ── PROJECTS ── */
+    /* ── PROJECT CARDS ── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -343,18 +340,18 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+      cursor: pointer;
       transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+      color: inherit;
     }
 
     .project-card:hover {
-      border-color: rgba(100, 255, 218, 0.25);
-      transform: translateY(-3px);
+      border-color: rgba(100, 255, 218, 0.3);
+      transform: translateY(-4px);
     }
 
-    .project-icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.25rem;
-    }
+    .project-icon { font-size: 1.5rem; }
 
     .project-name {
       font-size: 0.95rem;
@@ -392,6 +389,16 @@
       font-family: monospace;
     }
 
+    .card-footer {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+
     /* ── SKILLS ── */
     .skills-grid {
       display: grid;
@@ -418,11 +425,7 @@
       margin-bottom: 0.7rem;
     }
 
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
     .tag {
       font-size: 0.77rem;
@@ -454,10 +457,7 @@
       margin-bottom: 0.2rem;
     }
 
-    .edu-school {
-      font-size: 0.85rem;
-      color: var(--accent);
-    }
+    .edu-school { font-size: 0.85rem; color: var(--accent); }
 
     .edu-period {
       font-size: 0.78rem;
@@ -498,7 +498,6 @@
     .contact-link:hover { color: var(--accent); }
     .contact-link svg { width: 17px; height: 17px; flex-shrink: 0; }
 
-    /* ── FOOTER ── */
     footer {
       text-align: center;
       padding: 2rem;
@@ -508,9 +507,258 @@
       margin-top: 2rem;
     }
 
+    /* ════════════════════════════════
+       PROJECT DETAIL OVERLAY
+    ════════════════════════════════ */
+    #project-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--navy);
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #project-overlay.open {
+      transform: translateX(0);
+    }
+
+    .overlay-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 3rem;
+      height: 70px;
+      background: rgba(10, 25, 47, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: var(--font);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .back-btn:hover { opacity: 0.7; }
+
+    .overlay-nav-title {
+      font-size: 0.9rem;
+      color: var(--slate-light);
+      font-weight: 500;
+    }
+
+    .overlay-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .overlay-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .overlay-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+
+    .overlay-title {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+    }
+
+    .overlay-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .overlay-company {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-family: monospace;
+    }
+
+    .overlay-period {
+      font-size: 0.8rem;
+      color: var(--slate);
+      font-family: monospace;
+    }
+
+    /* Image Gallery */
+    .gallery {
+      margin-bottom: 2.5rem;
+    }
+
+    .gallery-main {
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--navy-light);
+      border: 1px solid rgba(100, 255, 218, 0.08);
+      margin-bottom: 0.75rem;
+      position: relative;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .gallery-main img.hidden { display: none; }
+
+    .img-placeholder {
+      text-align: center;
+      color: var(--slate);
+      padding: 2rem;
+    }
+
+    .img-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .img-placeholder p {
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .img-placeholder code {
+      font-size: 0.78rem;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+    }
+
+    .gallery-thumbs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-thumb {
+      width: 80px;
+      height: 52px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      background: var(--navy-light);
+      transition: border-color 0.2s;
+      flex-shrink: 0;
+    }
+
+    .gallery-thumb.active { border-color: var(--accent); }
+
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Overlay body */
+    .overlay-section-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .overlay-body {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .overlay-description p {
+      font-size: 0.92rem;
+      color: var(--slate);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .overlay-description p strong { color: var(--slate-light); font-weight: 500; }
+
+    .overlay-features {
+      list-style: none;
+      margin-top: 1.25rem;
+    }
+
+    .overlay-features li {
+      font-size: 0.88rem;
+      color: var(--slate);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.65;
+      margin-bottom: 0.5rem;
+    }
+
+    .overlay-features li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    .overlay-features li strong { color: var(--slate-light); font-weight: 500; }
+
+    .overlay-sidebar {}
+
+    .sidebar-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(100, 255, 218, 0.08);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .sidebar-tags .tag {
+      font-size: 0.75rem;
+      color: var(--slate-light);
+      background: rgba(100, 255, 218, 0.05);
+      border: 1px solid rgba(100, 255, 218, 0.1);
+      border-radius: 3px;
+      padding: 0.2rem 0.55rem;
+    }
+
     /* ── RESPONSIVE ── */
-    @media (max-width: 680px) {
-      nav { padding: 0 1.5rem; }
+    @media (max-width: 700px) {
+      nav, .overlay-nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
       section { padding: 80px 1.5rem 40px; }
       .hero-inner { flex-direction: column-reverse; gap: 2rem; align-items: flex-start; }
@@ -519,23 +767,26 @@
       .exp-period { margin-bottom: 0.4rem; }
       .about-grid { grid-template-columns: 1fr; }
       .edu-item { flex-direction: column; align-items: flex-start; }
+      .overlay-body { grid-template-columns: 1fr; }
+      .overlay-content { padding: 2rem 1.5rem 4rem; }
     }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav>
+  <nav id="main-nav">
     <a href="#hero" class="nav-logo">JH</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
+  <!-- ══════════════ MAIN PAGE ══════════════ -->
 
   <!-- HERO -->
   <section id="hero">
@@ -610,9 +861,61 @@
     </div>
   </section>
 
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 class="section-title"><span class="section-number">02.</span> Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-category">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">Java</span>
+          <span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">C++</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Backend Frameworks</div>
+        <div class="skill-tags">
+          <span class="tag">FastAPI</span><span class="tag">Spring Boot</span>
+          <span class="tag">Express.js</span><span class="tag">Node.js</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Frontend Frameworks</div>
+        <div class="skill-tags">
+          <span class="tag">React</span><span class="tag">Next.js</span>
+          <span class="tag">Vue.js</span><span class="tag">MUI</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Cloud &amp; Infrastructure</div>
+        <div class="skill-tags">
+          <span class="tag">AWS ECS</span><span class="tag">Step Functions</span>
+          <span class="tag">Lambda</span><span class="tag">S3 / RDS</span>
+          <span class="tag">EC2</span><span class="tag">SQS</span>
+          <span class="tag">Docker</span><span class="tag">Nginx</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Databases</div>
+        <div class="skill-tags">
+          <span class="tag">MySQL</span><span class="tag">MariaDB</span>
+          <span class="tag">OracleDB</span><span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Tools &amp; Protocols</div>
+        <div class="skill-tags">
+          <span class="tag">WebRTC</span><span class="tag">MQTT</span>
+          <span class="tag">Grafana</span><span class="tag">Pandas</span>
+          <span class="tag">Jupyter</span><span class="tag">Git</span><span class="tag">Linux</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience">
-    <h2 class="section-title"><span class="section-number">02.</span> Experience</h2>
+    <h2 class="section-title"><span class="section-number">03.</span> Experience</h2>
     <div class="exp-list">
 
       <div class="exp-item">
@@ -629,12 +932,11 @@
             <span class="stack-tag">React</span><span class="stack-tag">TypeScript</span>
           </div>
           <ul class="exp-bullets">
-            <li>Designed MySQL schemas and optimized indexing for financial data received from <strong>KED and FnGuide</strong>; built daily auto-collection pipelines with Docker + Nginx on Linux.</li>
-            <li>Refactored a <strong>20,000+ line monolithic script</strong> into modular components, cutting report generation from <strong>10 minutes to 2 minutes</strong>.</li>
-            <li>Built a climate-risk report generation system that auto-produces <strong>200,000+ corporate reports</strong> using Pandas, algorithmic optimization, and multiprocessing — scaling from 0 to 100 users.</li>
+            <li>Designed MySQL schemas and optimized indexing for financial data from <strong>KED and FnGuide</strong>; built daily auto-collection pipelines with Docker + Nginx on Linux.</li>
+            <li>Refactored a <strong>20,000+ line monolithic script</strong>, cutting report generation from <strong>10 minutes to 2 minutes</strong>.</li>
+            <li>Built a climate-risk report system auto-producing <strong>200,000+ corporate reports</strong> using Pandas, algorithmic optimization, and multiprocessing — scaled from 0 to 100 users.</li>
             <li>Developed backend APIs for <strong>crisk.co.kr</strong>: Spring Boot for auth/email/signup, FastAPI for financial data and report endpoints.</li>
             <li>Architected <strong>AWS ECS + Step Functions</strong> parallel pipeline for daily financial data ingestion; CI/CD via CodeCommit and CodeDeploy.</li>
-            <li>Used Express.js for rapid service deployment under time-critical deadlines.</li>
           </ul>
         </div>
       </div>
@@ -651,11 +953,11 @@
             <span class="stack-tag">MariaDB</span><span class="stack-tag">Python</span>
           </div>
           <ul class="exp-bullets">
-            <li>Built control platforms managing <strong>30 robots across 10+ locations</strong> — hospital, outdoor, and factory environments — with 5+ specialized UI variants.</li>
-            <li>Implemented <strong>WebRTC video streaming</strong> and <strong>MQTT-based</strong> robot control and sensor monitoring; visualized real-time data via <strong>Grafana dashboards</strong>.</li>
-            <li>Migrated the entire frontend from <strong>Vue.js to React</strong>, standardizing components and improving maintainability across 10+ site-specific deployments.</li>
+            <li>Built control platforms managing <strong>30 robots across 10+ locations</strong> — hospital, outdoor, and factory environments.</li>
+            <li>Implemented <strong>WebRTC video streaming</strong> and <strong>MQTT-based</strong> robot control and monitoring; visualized data via <strong>Grafana dashboards</strong>.</li>
+            <li>Migrated frontend from <strong>Vue.js to React</strong>, standardizing components across 10+ site-specific deployments.</li>
             <li>Delivered for major clients: <strong>Hyundai, SK Hynix, GS EPS</strong>.</li>
-            <li>Organized internal dev conferences and study groups on Git, clean code, and engineering culture.</li>
+            <li>Organized internal developer conferences and study groups on Git, clean code, and engineering culture.</li>
           </ul>
         </div>
       </div>
@@ -670,7 +972,7 @@
             <span class="stack-tag">jQuery</span><span class="stack-tag">OracleDB</span>
           </div>
           <ul class="exp-bullets">
-            <li>Developed and maintained a city gas ERP web service for <strong>Incheon City Gas</strong> using Spring Boot, Thymeleaf, and OracleDB.</li>
+            <li>Developed and maintained a city gas ERP web service for <strong>Incheon City Gas</strong>.</li>
           </ul>
         </div>
       </div>
@@ -680,11 +982,9 @@
         <div>
           <div class="exp-role">Freelance Developer</div>
           <div class="exp-company">NSG Co., Ltd.</div>
-          <div class="exp-stack">
-            <span class="stack-tag">C++</span>
-          </div>
+          <div class="exp-stack"><span class="stack-tag">C++</span></div>
           <ul class="exp-bullets">
-            <li>Converted nuclear power plant calculation logic into a <strong>C++ digital twin</strong> in collaboration with the Korea Water Resources Institute.</li>
+            <li>Converted nuclear power plant calculation logic into a <strong>C++ digital twin</strong> with Korea Water Resources Institute.</li>
           </ul>
         </div>
       </div>
@@ -694,183 +994,81 @@
 
   <!-- PROJECTS -->
   <section id="projects">
-    <h2 class="section-title"><span class="section-number">03.</span> Projects</h2>
+    <h2 class="section-title"><span class="section-number">04.</span> Projects</h2>
     <div class="projects-grid">
 
-      <div class="project-card">
+      <div class="project-card" onclick="openProject('crisk')">
         <div class="project-icon">🌍</div>
         <div class="project-name">CRISK — Carbon Risk Platform</div>
         <div class="project-company">@ Niflers</div>
-        <p class="project-desc">
-          Full-stack fintech platform for corporate carbon risk analysis.
-          Automated daily financial data ingestion via SMTP, processed with Python/Pandas,
-          and stored in MySQL. Generated carbon scenario forecasts via FastAPI.
-          Auth and operations handled by Spring Boot with Redis and Firebase.
-        </p>
+        <p class="project-desc">Full-stack fintech platform for corporate carbon risk analysis with automated data ingestion, MySQL storage, and FastAPI-powered report generation.</p>
         <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">FastAPI</span>
-          <span class="tag">Spring Boot</span><span class="tag">React</span>
-          <span class="tag">TypeScript</span><span class="tag">MUI</span>
-          <span class="tag">MySQL</span><span class="tag">Redis</span>
-          <span class="tag">Firebase</span>
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">MySQL</span><span class="tag">AWS</span>
         </div>
+        <div class="card-footer">View details &rarr;</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" onclick="openProject('credit')">
         <div class="project-icon">📊</div>
         <div class="project-name">Credit Imbalance Tracker</div>
         <div class="project-company">@ Niflers — Used by major banks &amp; asset firms</div>
-        <p class="project-desc">
-          Financial health visualization service for corporate imbalance indicators.
-          Built under tight TIPS program deadline using Next.js + Node.js + MySQL.
-          Used MUI Premium for advanced data visualization; self-hosted with Nginx.
-        </p>
+        <p class="project-desc">Corporate financial health visualization service for banks and asset rating agencies, built under TIPS program constraints with advanced data charts.</p>
         <div class="project-tags">
-          <span class="tag">Next.js</span><span class="tag">Node.js</span>
-          <span class="tag">TypeScript</span><span class="tag">MUI Premium</span>
-          <span class="tag">MySQL</span><span class="tag">Nginx</span>
+          <span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">MUI Premium</span><span class="tag">MySQL</span>
         </div>
+        <div class="card-footer">View details &rarr;</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" onclick="openProject('credivalue')">
         <div class="project-icon">💹</div>
         <div class="project-name">Credivalue — Alternative Investment Valuation</div>
-        <div class="project-company">@ Niflers — Used by Samil PwC, Seohyun Accounting</div>
-        <p class="project-desc">
-          Present-value evaluation platform for alternative investments.
-          Excel upload triggers async processing via AWS Lambda + Step Functions + SQS.
-          Full CI/CD with CodeCommit and CodeDeploy; JWT-based auth.
-        </p>
+        <div class="project-company">@ Niflers — Samil PwC, Seohyun Accounting</div>
+        <p class="project-desc">Present-value evaluation platform. Excel upload triggers async processing via AWS Lambda + Step Functions + SQS with full CI/CD pipeline.</p>
         <div class="project-tags">
-          <span class="tag">React</span><span class="tag">TypeScript</span>
-          <span class="tag">FastAPI</span><span class="tag">Spring Boot</span>
-          <span class="tag">AWS Lambda</span><span class="tag">Step Functions</span>
-          <span class="tag">SQS</span><span class="tag">EC2/RDS/S3</span>
-          <span class="tag">JWT</span>
+          <span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">Spring Boot</span><span class="tag">Lambda</span><span class="tag">Step Functions</span>
         </div>
+        <div class="card-footer">View details &rarr;</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" onclick="openProject('hospital-robot')">
         <div class="project-icon">🤖</div>
         <div class="project-name">Hospital Robot Control System</div>
         <div class="project-company">@ Dogugonggan — Hyundai client</div>
-        <p class="project-desc">
-          Real-time monitoring and control system for indoor autonomous robots.
-          WebRTC camera streaming, TTS/STT patient-robot voice interface,
-          real-time location tracking on floor maps, and AI event log visualization.
-        </p>
+        <p class="project-desc">Real-time monitoring and control system for indoor autonomous hospital robots with WebRTC streaming and TTS/STT voice interface.</p>
         <div class="project-tags">
-          <span class="tag">React</span><span class="tag">TypeScript</span>
-          <span class="tag">WebRTC</span><span class="tag">MQTT</span>
-          <span class="tag">React Query</span><span class="tag">ApexCharts</span>
+          <span class="tag">React</span><span class="tag">WebRTC</span><span class="tag">MQTT</span><span class="tag">TypeScript</span><span class="tag">ApexCharts</span>
         </div>
+        <div class="card-footer">View details &rarr;</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" onclick="openProject('service-robot')">
         <div class="project-icon">📺</div>
-        <div class="project-name">Service Robot Front Display UI</div>
-        <div class="project-company">@ Dogugonggan — SK Hynix, GS EPS clients</div>
-        <p class="project-desc">
-          Touch UI for service robot front displays — information guidance,
-          indoor navigation, and real-time video calling via Zoom SDK.
-          Deployed across multiple enterprise sites.
-        </p>
+        <div class="project-name">Service Robot Display UI</div>
+        <div class="project-company">@ Dogugonggan — SK Hynix, GS EPS</div>
+        <p class="project-desc">Touch UI for service robot front displays — info guidance, indoor navigation, and real-time video calling via Zoom SDK.</p>
         <div class="project-tags">
-          <span class="tag">React</span><span class="tag">TypeScript</span>
-          <span class="tag">Zoom SDK</span><span class="tag">WebRTC</span>
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Zoom SDK</span><span class="tag">WebRTC</span>
         </div>
+        <div class="card-footer">View details &rarr;</div>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" onclick="openProject('digital-twin')">
         <div class="project-icon">⚛️</div>
         <div class="project-name">Nuclear Plant Digital Twin</div>
         <div class="project-company">@ NSG — Korea Water Resources Institute</div>
-        <p class="project-desc">
-          Converted nuclear power plant thermal-hydraulic calculation logic
-          into a C++ digital twin simulation. Collaborated with domain engineers
-          on model validation and accuracy.
-        </p>
+        <p class="project-desc">C++ digital twin simulation of nuclear power plant thermal-hydraulic calculations, validated with domain engineers.</p>
         <div class="project-tags">
-          <span class="tag">C++</span><span class="tag">Digital Twin</span>
-          <span class="tag">Simulation</span>
+          <span class="tag">C++</span><span class="tag">Digital Twin</span><span class="tag">Simulation</span>
         </div>
+        <div class="card-footer">View details &rarr;</div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2 class="section-title"><span class="section-number">04.</span> Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-category">Languages</div>
-        <div class="skill-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Java</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">C++</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Backend Frameworks</div>
-        <div class="skill-tags">
-          <span class="tag">FastAPI</span>
-          <span class="tag">Spring Boot</span>
-          <span class="tag">Express.js</span>
-          <span class="tag">Node.js</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Frontend Frameworks</div>
-        <div class="skill-tags">
-          <span class="tag">React</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">Vue.js</span>
-          <span class="tag">MUI</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Cloud &amp; Infrastructure</div>
-        <div class="skill-tags">
-          <span class="tag">AWS ECS</span>
-          <span class="tag">Step Functions</span>
-          <span class="tag">Lambda</span>
-          <span class="tag">S3 / RDS</span>
-          <span class="tag">EC2</span>
-          <span class="tag">SQS</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Nginx</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Databases</div>
-        <div class="skill-tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">MariaDB</span>
-          <span class="tag">OracleDB</span>
-          <span class="tag">Redis</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-category">Tools &amp; Protocols</div>
-        <div class="skill-tags">
-          <span class="tag">WebRTC</span>
-          <span class="tag">MQTT</span>
-          <span class="tag">Grafana</span>
-          <span class="tag">Pandas</span>
-          <span class="tag">Jupyter</span>
-          <span class="tag">Git</span>
-          <span class="tag">Linux</span>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- EDUCATION -->
   <section id="education">
-    <h2 class="section-title"><span class="section-number">05.</span> Education</h2>
+    <h2 class="section-title"><span class="section-number">05.</span> Education &amp; Certification</h2>
     <div class="edu-list">
       <div class="edu-item">
         <div>
@@ -888,14 +1086,8 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2 class="section-title" style="justify-content:center;"><span class="section-number">06.</span> Contact</h2>
-    <p class="contact-desc">
-      I'm open to research collaborations, graduate opportunities, and interesting engineering challenges.
-      Feel free to reach out.
-    </p>
-    <div class="contact-links">
+  <footer>
+    <div class="contact-links" style="justify-content:center;margin-bottom:1rem;">
       <a href="mailto:hurjun96@gmail.com" class="contact-link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
         hurjun96@gmail.com
@@ -906,14 +1098,323 @@
       </a>
       <a href="https://www.linkedin.com/in/jun-hur-a3b0b7159/" target="_blank" rel="noopener" class="contact-link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
+        linkedin.com/in/jun-hur-a3b0b7159
       </a>
     </div>
-  </section>
-
-  <footer>
-    <p>Designed &amp; Built by Jun Hur &nbsp;·&nbsp; hurjun.github.io</p>
+    <p>Designed &amp; Built by Jun Hur</p>
   </footer>
 
+  <!-- ══════════════ PROJECT DETAIL OVERLAY ══════════════ -->
+  <div id="project-overlay" role="dialog" aria-modal="true">
+    <nav class="overlay-nav">
+      <button class="back-btn" onclick="closeProject()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        Back to Projects
+      </button>
+      <span class="overlay-nav-title" id="overlay-nav-title"></span>
+    </nav>
+    <div class="overlay-content" id="overlay-content"></div>
+  </div>
+
+  <script>
+    // ── Project Data ──
+    const PROJECTS = {
+      crisk: {
+        icon: '🌍',
+        name: 'CRISK — Carbon Risk Platform',
+        company: 'Niflers (Fintech)',
+        period: 'Jan 2024 – Present',
+        images: [
+          'img/crisk-1.jpg',
+          'img/crisk-2.jpg',
+          'img/crisk-3.jpg',
+        ],
+        description: [
+          'CRISK is a fintech platform for <strong>corporate carbon risk analysis</strong>, used by companies and investors to evaluate climate-related financial exposure.',
+          'I built the core data pipeline: financial data is received daily via SMTP as text files from <strong>KED (Korea Evaluation Data)</strong> and <strong>FnGuide</strong>, then processed with Python and Pandas, cleaned, and stored in a <strong>MySQL database</strong> I designed with optimized indexing.',
+          'Using this structured financial DB, the system generates <strong>carbon scenario-based future projections</strong> for each company. I developed the FastAPI backend that powers the financial data and report endpoints.',
+          'The web service (crisk.co.kr) uses <strong>Spring Boot</strong> for auth, email, and user management, and <strong>FastAPI</strong> for data-science-facing APIs — a split architecture that kept DS team workflows in Python while serving production traffic reliably.',
+          'I also collaborated closely with the data science team, analyzing their Jupyter notebooks to design new financial DB structures and refactoring a <strong>20,000+ line single script</strong> into a modular report engine — reducing generation time from <strong>10 minutes to 2 minutes</strong>.',
+        ],
+        features: [
+          '<strong>Automated daily data ingestion</strong> from KED and FnGuide via SMTP + Python scripts (Docker + Nginx, Linux)',
+          '<strong>MySQL schema design</strong> and query indexing optimization for large financial datasets',
+          '<strong>Carbon scenario modeling</strong> — generates future risk projections per company',
+          '<strong>FastAPI endpoints</strong> for financial data and report delivery',
+          '<strong>Spring Boot</strong> for authentication, email verification, and user management',
+          '<strong>React + TypeScript + MUI</strong> frontend with data visualization',
+          '<strong>Redis</strong> caching and <strong>Firebase</strong> for operational services',
+          'Data science collaboration — restructured DB from Jupyter prototype to production schema',
+        ],
+        stack: ['Python', 'FastAPI', 'Spring Boot', 'React', 'TypeScript', 'MUI', 'MySQL', 'Pandas', 'Redis', 'Firebase', 'Docker', 'Nginx', 'Linux'],
+      },
+
+      credit: {
+        icon: '📊',
+        name: 'Credit Imbalance Tracker',
+        company: 'Niflers (Fintech)',
+        period: 'Jan 2024 – Present',
+        images: [
+          'img/credit-1.jpg',
+          'img/credit-2.jpg',
+        ],
+        description: [
+          'Credit Imbalance Tracker is a <strong>corporate financial health visualization service</strong> used by major banks and asset rating agencies to monitor financial imbalance indicators.',
+          'The project was developed under tight time constraints as part of a <strong>TIPS program</strong> requirement. I chose <strong>Next.js + Node.js + MySQL</strong> for rapid full-stack development, with <strong>TypeScript</strong> throughout for maintainability.',
+          'For the data visualization layer, I integrated <strong>MUI Premium</strong> — including advanced chart components — to deliver the high-quality dashboards the clients expected. The UI handles complex financial metrics like CIT Score, Industrial Risk, and Early Warning Signals.',
+          'Deployment was self-hosted: I purchased a domain via WHOIS and configured <strong>Nginx</strong> on an in-house server to proxy the Next.js app, giving us full control over the infrastructure.',
+        ],
+        features: [
+          'Financial imbalance indicator dashboard used by <strong>major Korean banks and asset firms</strong>',
+          '<strong>MUI Premium</strong> advanced charts — gauge meters, time-series, indicator grids',
+          'Metrics: CIT Score, Industrial Risk, Audit Risk, Early Warning Signal, Credit Shock Indicator',
+          '<strong>Next.js + Node.js</strong> full-stack, TypeScript end-to-end',
+          'Self-hosted deployment with <strong>WHOIS domain + Nginx</strong>',
+          'Delivered within TIPS program deadline constraints',
+        ],
+        stack: ['Next.js', 'Node.js', 'TypeScript', 'MUI Premium', 'MySQL', 'Nginx'],
+      },
+
+      credivalue: {
+        icon: '💹',
+        name: 'Credivalue — Alternative Investment Valuation',
+        company: 'Niflers (Fintech)',
+        period: 'Jan 2024 – Present',
+        images: [
+          'img/credivalue-1.jpg',
+          'img/credivalue-2.jpg',
+        ],
+        description: [
+          'Credivalue is a <strong>present-value evaluation platform for alternative investments</strong>, used by major accounting firms including <strong>Samil PwC</strong> and <strong>Seohyun Accounting</strong>.',
+          'The core user flow: a user uploads an <strong>Excel template</strong> with investment parameters, which triggers an async processing pipeline built on <strong>AWS Lambda + Step Functions + SQS</strong>. Results are returned without blocking the UI.',
+          'I designed and maintained the full <strong>CI/CD pipeline</strong> using AWS CodeCommit and CodeDeploy, and set up the infrastructure: <strong>EC2 + RDS (MySQL) + S3</strong>.',
+          'The backend uses both <strong>Java Spring</strong> (for business logic and auth) and <strong>FastAPI</strong> (for calculation-heavy endpoints), with <strong>JWT</strong>-based authentication. The frontend is <strong>React + TypeScript</strong> with Bootstrap UI.',
+        ],
+        features: [
+          '<strong>Excel upload → async valuation</strong> via AWS Lambda + Step Functions + SQS',
+          '<strong>CI/CD pipeline</strong> with CodeCommit and CodeDeploy — designed and maintained independently',
+          '<strong>EC2 + RDS (MySQL) + S3</strong> infrastructure setup',
+          '<strong>Java Spring + FastAPI</strong> dual-backend architecture',
+          '<strong>JWT-based authentication</strong>',
+          'Used in production by <strong>Samil PwC</strong> and <strong>Seohyun Accounting</strong>',
+          'Valuation models: Option Pricing, Bootstrapping, multi-period cash flow analysis',
+        ],
+        stack: ['React', 'TypeScript', 'Bootstrap', 'Java Spring', 'FastAPI', 'AWS Lambda', 'Step Functions', 'SQS', 'EC2', 'RDS (MySQL)', 'S3', 'JWT', 'CodeCommit', 'CodeDeploy'],
+      },
+
+      'hospital-robot': {
+        icon: '🤖',
+        name: 'Hospital Robot Control System',
+        company: 'Dogugonggan — Hyundai client',
+        period: 'Jan 2022 – Dec 2023',
+        images: [
+          'img/robot-hospital-1.jpg',
+          'img/robot-hospital-2.jpg',
+          'img/robot-hospital-3.jpg',
+        ],
+        description: [
+          'A real-time monitoring and control platform for <strong>indoor autonomous robots</strong> deployed in hospital environments. Built for the Hyundai client and optimized for medical staff workflows.',
+          'The system displays each robot\'s <strong>live position on floor maps</strong>, streams multiple camera feeds simultaneously via <strong>WebRTC</strong>, and allows remote control and status monitoring via <strong>MQTT</strong>.',
+          'A key feature is the <strong>TTS/STT voice interface</strong> — allowing patients and staff to interact with the robot through speech, with conversation history that can be edited and reviewed.',
+          'Sensor data from each robot is collected in real-time, stored in the database, and displayed through <strong>AI event logs</strong> and interactive charts. The UX was deliberately simplified for non-technical medical staff.',
+        ],
+        features: [
+          '<strong>Real-time floor map</strong> with live robot position tracking',
+          '<strong>WebRTC multi-camera streaming</strong> (front, back, left, right views) with recording',
+          '<strong>MQTT-based</strong> robot control and sensor status monitoring',
+          '<strong>TTS/STT</strong> patient-robot voice conversation with history management',
+          '<strong>AI event log</strong> visualization with ApexCharts',
+          'Manual robot control UI (directional pad, speed control)',
+          'Designed for <strong>medical environment UX</strong> — simplified, accessible interface',
+          'Managed 30+ robots across 10+ sites with 5+ control UI variants',
+        ],
+        stack: ['React', 'TypeScript', 'React Query', 'React Hook', 'WebRTC', 'MQTT', 'ApexCharts', 'MariaDB', 'Python'],
+      },
+
+      'service-robot': {
+        icon: '📺',
+        name: 'Service Robot Display UI',
+        company: 'Dogugonggan — SK Hynix, GS EPS clients',
+        period: 'Jan 2022 – Dec 2023',
+        images: [
+          'img/service-robot-1.jpg',
+          'img/service-robot-2.jpg',
+        ],
+        description: [
+          'A <strong>touch-screen UI for service robot front displays</strong>, enabling user interaction in public and enterprise environments. Deployed across multiple sites for clients including SK Hynix and GS EPS.',
+          'The interface supports three main modes: <strong>information guidance</strong> (announcements, schedules, local content), <strong>indoor navigation</strong> (route display and guidance), and <strong>real-time video calling</strong> via Zoom SDK.',
+          'The UI is designed for brief, task-focused interactions — users can touch the display to get info or connect with a remote operator instantly. All interactions are optimized for the constrained screen size and public-facing context.',
+        ],
+        features: [
+          '<strong>Touch-first UI</strong> for robot front display panels',
+          '<strong>Information & announcement</strong> display with dynamic content',
+          '<strong>Indoor navigation</strong> — route guidance on floor maps',
+          '<strong>Real-time video calling</strong> via Zoom SDK (WebRTC-based)',
+          'Deployed across multiple enterprise sites (SK Hynix, GS EPS)',
+          'Optimized for brief public interactions and non-technical users',
+        ],
+        stack: ['React', 'TypeScript', 'Zoom SDK', 'WebRTC'],
+      },
+
+      'digital-twin': {
+        icon: '⚛️',
+        name: 'Nuclear Plant Digital Twin',
+        company: 'NSG Co., Ltd. — Korea Water Resources Institute',
+        period: 'Mar 2021 – Apr 2021',
+        images: [
+          'img/digital-twin-1.jpg',
+        ],
+        description: [
+          'A <strong>C++ digital twin simulation</strong> of nuclear power plant thermal-hydraulic calculation logic, developed in collaboration with the <strong>Korea Water Resources Institute (K-water)</strong>.',
+          'The project involved converting existing calculation logic — originally expressed in domain-specific engineering formats — into a structured, executable C++ simulation model.',
+          'I worked closely with domain engineers to validate the model\'s accuracy against reference data, ensuring the simulation correctly replicated the physical behavior of the plant systems.',
+        ],
+        features: [
+          'Converted nuclear plant <strong>thermal-hydraulic calculation logic</strong> to C++ simulation',
+          'Close collaboration with <strong>Korea Water Resources Institute</strong> domain engineers',
+          'Model validation against engineering reference data',
+          '<strong>Digital twin</strong> architecture for plant system behavior replication',
+        ],
+        stack: ['C++', 'Digital Twin', 'Simulation', 'Numerical Methods'],
+      },
+    };
+
+    // ── Gallery state ──
+    let currentImages = [];
+    let currentIdx = 0;
+
+    function openProject(id) {
+      const p = PROJECTS[id];
+      if (!p) return;
+
+      currentImages = p.images || [];
+      currentIdx = 0;
+
+      document.getElementById('overlay-nav-title').textContent = p.name;
+
+      const content = document.getElementById('overlay-content');
+      content.innerHTML = `
+        <div class="overlay-header">
+          <div class="overlay-icon">${p.icon}</div>
+          <h1 class="overlay-title">${p.name}</h1>
+          <div class="overlay-meta">
+            <span class="overlay-company">${p.company}</span>
+            <span class="overlay-period">${p.period}</span>
+          </div>
+        </div>
+
+        <div class="gallery" id="gallery-section"></div>
+
+        <div class="overlay-body">
+          <div class="overlay-description">
+            <div class="overlay-section-title">Overview</div>
+            ${p.description.map(d => `<p>${d}</p>`).join('')}
+            <ul class="overlay-features" style="margin-top:1.5rem;">
+              <div class="overlay-section-title">Key Features</div>
+              ${p.features.map(f => `<li>${f}</li>`).join('')}
+            </ul>
+          </div>
+          <div class="overlay-sidebar">
+            <div class="sidebar-card">
+              <div class="overlay-section-title">Tech Stack</div>
+              <div class="sidebar-tags">
+                ${p.stack.map(t => `<span class="tag">${t}</span>`).join('')}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Build gallery after render
+      buildGallery(p.images);
+
+      const overlay = document.getElementById('project-overlay');
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      overlay.scrollTop = 0;
+
+      // Push hash so back button works
+      history.pushState({ project: id }, '', '#project-' + id);
+    }
+
+    function buildGallery(images) {
+      const section = document.getElementById('gallery-section');
+      if (!images || images.length === 0) return;
+
+      // Try to load first image; if all fail, hide gallery
+      let html = `
+        <div class="gallery-main" id="gallery-main">
+          <img id="gallery-img" src="${images[0]}" alt="Screenshot"
+               onerror="handleImgError(this)"
+               onload="handleImgLoad(this)" />
+          <div class="img-placeholder" id="img-placeholder" style="display:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <p>Add screenshots to <code>img/</code> folder<br/>to display them here.</p>
+          </div>
+        </div>`;
+
+      if (images.length > 1) {
+        html += `<div class="gallery-thumbs" id="gallery-thumbs">
+          ${images.map((src, i) => `
+            <div class="gallery-thumb ${i === 0 ? 'active' : ''}" onclick="selectThumb(${i})" id="thumb-${i}">
+              <img src="${src}" alt="Screenshot ${i+1}" onerror="this.parentElement.style.display='none'" />
+            </div>`).join('')}
+        </div>`;
+      }
+
+      section.innerHTML = html;
+    }
+
+    function handleImgLoad(img) {
+      img.classList.remove('hidden');
+      const ph = document.getElementById('img-placeholder');
+      if (ph) ph.style.display = 'none';
+    }
+
+    function handleImgError(img) {
+      img.style.display = 'none';
+      const ph = document.getElementById('img-placeholder');
+      if (ph) ph.style.display = 'flex';
+      // hide entire gallery-main border if placeholder is shown
+    }
+
+    function selectThumb(idx) {
+      currentIdx = idx;
+      const img = document.getElementById('gallery-img');
+      const ph = document.getElementById('img-placeholder');
+      if (img) {
+        img.style.display = 'block';
+        if (ph) ph.style.display = 'none';
+        img.src = currentImages[idx];
+        img.onerror = function() { handleImgError(img); };
+        img.onload = function() { handleImgLoad(img); };
+      }
+      document.querySelectorAll('.gallery-thumb').forEach((t, i) => {
+        t.classList.toggle('active', i === idx);
+      });
+    }
+
+    function closeProject() {
+      document.getElementById('project-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+      if (location.hash.startsWith('#project-')) {
+        history.back();
+      }
+    }
+
+    // Handle browser back button
+    window.addEventListener('popstate', function(e) {
+      const overlay = document.getElementById('project-overlay');
+      if (overlay.classList.contains('open')) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeProject();
+    });
+  </script>
 </body>
 </html>
