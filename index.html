@@ -533,6 +533,24 @@
       flex-shrink: 0;
     }
 
+    .paper-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .paper-download:hover {
+      background: rgba(100, 255, 218, 0.08);
+      border-color: var(--accent);
+    }
+
     /* ── CONTACT ── */
     #contact { text-align: center; }
 
@@ -1151,6 +1169,10 @@
         <div>
           <div class="edu-degree">Bachelor of Science, Computer Science</div>
           <div class="edu-school">Chungnam National University</div>
+          <a href="asset/graduation_paper.pdf" download class="paper-download">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Graduation Paper
+          </a>
         </div>
         <div class="edu-period">Mar 2016 – Feb 2025</div>
       </div>
