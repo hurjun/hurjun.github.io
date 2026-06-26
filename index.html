@@ -946,6 +946,7 @@
   </nav>
 
   <!-- ══════════════ MAIN PAGE ══════════════ -->
+  <main id="content">
 
   <!-- HERO -->
   <section id="hero">
@@ -1248,7 +1249,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('clinical-stt')">
-        <div class="project-icon">🩺</div>
+        <div class="project-icon" aria-hidden="true">🩺</div>
         <div class="project-name">Clinical Documentation Assistant (STT)</div>
         <div class="project-company">@ Healthcare AI Project</div>
         <p class="project-desc">AI speech-to-text platform that turns clinical conversations into structured documentation, reducing manual charting — designed to fit existing clinical workflows, not just maximize transcription accuracy.</p>
@@ -1323,7 +1324,7 @@
       </div>
 
       <div class="project-card" onclick="openProject('digital-twin')">
-        <div class="project-icon">⚛️</div><!-- no screenshot available -->
+        <div class="project-icon" aria-hidden="true">⚛️</div><!-- no screenshot available -->
         <div class="project-name">Nuclear Plant Digital Twin</div>
         <div class="project-company">@ NSG — Korea Water Resources Institute</div>
         <p class="project-desc">C++ digital twin simulation of nuclear power plant thermal-hydraulic calculations, validated with domain engineers.</p>
@@ -1358,6 +1359,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="contact-links" style="justify-content:center;margin-bottom:1rem;">
@@ -1378,7 +1380,7 @@
   </footer>
 
   <!-- ══════════════ PROJECT DETAIL OVERLAY ══════════════ -->
-  <div id="project-overlay" role="dialog" aria-modal="true">
+  <div id="project-overlay" role="dialog" aria-modal="true" aria-labelledby="overlay-nav-title">
     <nav class="overlay-nav">
       <button class="back-btn" onclick="closeProject()">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
@@ -1640,7 +1642,7 @@
       const content = document.getElementById('overlay-content');
       content.innerHTML = `
         <div class="overlay-header">
-          <div class="overlay-icon">${p.icon}</div>
+          <div class="overlay-icon" aria-hidden="true">${p.icon}</div>
           <h1 class="overlay-title">${p.name}</h1>
           <div class="overlay-meta">
             <span class="overlay-company">${p.company}</span>
