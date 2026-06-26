@@ -1,0 +1,26 @@
+# ── macOS ──
+.DS_Store
+**/.DS_Store
+
+# ── Editor / local tooling ──
+.idea/
+.vscode/
+.claude/
+CLAUDE.md
+
+# ── Confidential / internal company material — NEVER COMMIT ──
+# Proprietary documents must not be published on this public site.
+*internal*
+*confidential*
+asset/gole-fms-internal-control.pdf
+
+# ── Secrets / environment ──
+.env
+.env.*
+
+# ── Dependencies / build (in case tooling is added later) ──
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
