@@ -1,6 +1,6 @@
 # hurjun.github.io
 
-Personal portfolio website for Jun Hur — Full-Stack Developer.
+Personal portfolio website for Jun Hur — software engineer (robotics, fintech, healthcare) and an aspiring CS graduate researcher in human-centered decision-support systems and sim-to-real robotics.
 
 🔗 **Live site:** [hurjun.github.io](https://hurjun.github.io)
 
@@ -10,11 +10,20 @@ A single-page portfolio built with vanilla HTML, CSS, and JavaScript. No framewo
 
 ## Sections
 
+- **Research Interests** — graduate research agenda
 - **About** — background and key highlights
 - **Skills** — languages, frameworks, cloud, databases, tools
 - **Experience** — work history with tech stacks
-- **Projects** — 6 project cards with full-screen detail overlay, screenshots, and links
+- **Projects** — 8 project cards with full-screen detail overlay, screenshots, and links
 - **Education** — degree and certification
+
+## Local Development
+
+No build step. Open `index.html` directly, or serve the folder:
+
+```bash
+python3 -m http.server 8000   # then visit http://localhost:8000
+```
 
 ## Project Detail Pages
 
@@ -31,6 +40,7 @@ All images live in the `asset/` folder. Filenames must be **ASCII only** (no spa
 
 | Project | Image files |
 |---|---|
+| Robot Fleet Management System | `asset/gole-fms-01.png` … `asset/gole-fms-15.png` |
 | CRISK | `asset/crisk.png`, `asset/crisk-chatbot.png` |
 | Credit Imbalance Tracker | `asset/credit-imbalance.png` |
 | Credivalue | `asset/credivalue.png` |
