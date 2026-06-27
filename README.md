@@ -14,7 +14,7 @@ A single-page portfolio built with vanilla HTML, CSS, and JavaScript. No framewo
 - **About** — background and key highlights
 - **Skills** — languages, frameworks, cloud, databases, tools
 - **Experience** — work history with tech stacks
-- **Projects** — 8 project cards with full-screen detail overlay, screenshots, and links
+- **Projects** — 8 project cards with full-screen detail overlay, screenshots, and links, plus a **Selected Open-Source Projects** list linking the strongest GitHub repos (`github.com/hurjun`)
 - **Education** — degree and certification
 
 ## Local Development
