@@ -536,6 +536,99 @@
 
     .overlay-visit:hover { background: var(--accent-dim); }
 
+    /* ── OPEN-SOURCE PROJECT LIST ── */
+    .oss-subhead {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      margin: 3.25rem 0 0.4rem;
+    }
+
+    .oss-intro {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.7;
+      max-width: 720px;
+      margin-bottom: 1.5rem;
+    }
+
+    .oss-intro a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+    }
+
+    .oss-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .oss-card {
+      background: var(--navy-light);
+      border: 1px solid rgba(100, 255, 218, 0.08);
+      border-radius: 8px;
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .oss-card:hover {
+      border-color: rgba(100, 255, 218, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .oss-card-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .oss-name {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.35;
+    }
+
+    .oss-repo {
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-family: monospace;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .oss-desc {
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .oss-desc strong { color: var(--slate-light); font-weight: 500; }
+
+    .oss-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .oss-tags .tag {
+      font-size: 0.7rem;
+      color: var(--slate);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(168, 178, 216, 0.12);
+      border-radius: 3px;
+      padding: 0.15rem 0.45rem;
+      font-family: monospace;
+    }
+
     /* ── SKILLS ── */
     .skills-grid {
       display: grid;
@@ -1333,6 +1426,94 @@
         </div>
         <div class="card-footer">View details &rarr;</div>
       </div>
+
+    </div>
+
+    <!-- SELECTED OPEN-SOURCE PROJECTS -->
+    <h3 class="oss-subhead">Selected Open-Source Projects</h3>
+    <p class="oss-intro">
+      Self-directed projects on <a href="https://github.com/hurjun" target="_blank" rel="noopener">github.com/hurjun</a>
+      exploring the research directions above &mdash; multi-robot coordination, sequence models, and efficient ML systems.
+      Each repository is reproducible, tested, and documents its results honestly; the figures below are the real measured outcomes from each README.
+    </p>
+    <div class="oss-grid">
+
+      <a href="https://github.com/hurjun/mapf-fleet" target="_blank" rel="noopener" class="oss-card">
+        <div class="oss-card-head">
+          <span class="oss-name">MAPF Fleet &mdash; Multi-Robot Construction-Site Simulator</span>
+          <span class="oss-repo">GitHub ↗</span>
+        </div>
+        <p class="oss-desc">Real-time 3D simulation of a multi-robot fleet on a multi-floor site, built on a <strong>from-scratch TypeScript MAPF engine</strong> (windowed cooperative A* and Conflict-Based Search), capacity-limited elevators, and a live fleet-size optimizer. A headless benchmark stays <strong>collision-free across 66 runs / 21,000+ simulated ticks</strong>.</p>
+        <div class="oss-tags">
+          <span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">React Three Fiber</span><span class="tag">MAPF</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/hurjun/attention_is_all_you_need" target="_blank" rel="noopener" class="oss-card">
+        <div class="oss-card-head">
+          <span class="oss-name">Transformer from Scratch</span>
+          <span class="oss-repo">GitHub ↗</span>
+        </div>
+        <p class="oss-desc">From-scratch PyTorch reimplementation of <em>Attention Is All You Need</em> &mdash; attention, masks, Noam schedule, and label smoothing all built from primitives. Reaches <strong>98.2% sequence exact-match</strong> on a synthetic reverse task on CPU; a positional-encoding ablation drops that to <strong>0%</strong>, confirming the component is load-bearing.</p>
+        <div class="oss-tags">
+          <span class="tag">PyTorch</span><span class="tag">Transformers</span><span class="tag">NLP</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/hurjun/xLSTM" target="_blank" rel="noopener" class="oss-card">
+        <div class="oss-card-head">
+          <span class="oss-name">xLSTM from Scratch</span>
+          <span class="oss-repo">GitHub ↗</span>
+        </div>
+        <p class="oss-desc">From-scratch PyTorch sLSTM and mLSTM cells with exponential gating and the stabilizer state (Beck et al., NeurIPS 2024). On a 64-step recall task the xLSTM reaches <strong>100% accuracy</strong> while a vanilla LSTM <strong>never beats chance</strong> &mdash; even when given up to 2&times; the parameters.</p>
+        <div class="oss-tags">
+          <span class="tag">PyTorch</span><span class="tag">RNN</span><span class="tag">Sequence Modeling</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/hurjun/speculative-decoding-lab" target="_blank" rel="noopener" class="oss-card">
+        <div class="oss-card-head">
+          <span class="oss-name">Speculative Decoding Lab</span>
+          <span class="oss-repo">GitHub ↗</span>
+        </div>
+        <p class="oss-desc">From-scratch speculative decoding for autoregressive LLM inference with distribution-preserving acceptance sampling. Measures up to <strong>1.80&times; lossless speedup</strong> (GPT-2-large drafted by DistilGPT-2 on Apple-Silicon MPS), with output token-for-token identical to greedy decoding.</p>
+        <div class="oss-tags">
+          <span class="tag">PyTorch</span><span class="tag">LLM Inference</span><span class="tag">GPT-2</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/hurjun/stt-nursing-system" target="_blank" rel="noopener" class="oss-card">
+        <div class="oss-card-head">
+          <span class="oss-name">MediVoice &mdash; AI-Speaker Nursing System</span>
+          <span class="oss-repo">GitHub ↗</span>
+        </div>
+        <p class="oss-desc">Voice-first nursing documentation: an AI speaker asks assessment questions (TTS), transcribes the answers (STT), and normalizes them into structured records. Realizes an undergraduate study where the assisted workflow cut documentation time <strong>by up to 96%</strong>.</p>
+        <div class="oss-tags">
+          <span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Web Speech API</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/hurjun/stock-forecast-benchmark" target="_blank" rel="noopener" class="oss-card">
+        <div class="oss-card-head">
+          <span class="oss-name">Stock Forecast Benchmark</span>
+          <span class="oss-repo">GitHub ↗</span>
+        </div>
+        <p class="oss-desc">A leakage-aware, config-driven benchmark of <strong>9 time-series forecasters</strong> (ARIMA, ETS, Prophet, XGBoost, LightGBM, LSTM, GRU, TCN, Transformer) on 1962&ndash;1992 &rarr; 1993&ndash;2000 stock data. <strong>Prophet ranks first overall (RMSE 160)</strong>, with an honest analysis of why deep models underperform here.</p>
+        <div class="oss-tags">
+          <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Forecasting</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/hurjun/mlops" target="_blank" rel="noopener" class="oss-card">
+        <div class="oss-card-head">
+          <span class="oss-name">PPE Watchman &mdash; Edge-to-Cloud Safety Monitoring</span>
+          <span class="oss-repo">GitHub ↗</span>
+        </div>
+        <p class="oss-desc">Distributed, real-time detection of missing personal protective equipment. An edge client runs <strong>YOLOv8</strong> inference and streams lightweight violation events to a <strong>FastAPI</strong> hub, which persists them and fans them out over <strong>WebSocket</strong> to a live Next.js operator dashboard.</p>
+        <div class="oss-tags">
+          <span class="tag">FastAPI</span><span class="tag">YOLOv8</span><span class="tag">Next.js</span><span class="tag">WebSocket</span>
+        </div>
+      </a>
 
     </div>
   </section>
