@@ -1,6 +1,6 @@
 # hurjun.github.io
 
-Personal portfolio website for Jun Hur (허준) — a software engineer with 5+ years across robotics, fintech, and healthcare, focused on autonomous-robot fleet operations, multi-robot path planning, and sim-to-real. The site content is written in Korean and oriented toward construction/robotics automation roles.
+Personal portfolio website for Jun Hur (허준) — a software engineer with 6+ years across robotics, fintech, and healthcare, focused on autonomous-robot fleet operations, multi-robot path planning, and sim-to-real. The site content is written in English, emphasizing reliable, well-engineered software in safety-critical environments.
 
 🔗 **Live site:** [hurjun.github.io](https://hurjun.github.io)
 
@@ -10,7 +10,7 @@ A single-page portfolio built with vanilla HTML, CSS, and JavaScript. No framewo
 
 ## Sections
 
-- **관심 분야 (Interests)** — construction & robotics automation focus
+- **Interests** — field automation, multi-robot coordination, sim-to-real, digital twins, real-time monitoring
 - **About** — background and key highlights
 - **Skills** — languages, frameworks, cloud, databases, tools
 - **Experience** — work history with tech stacks
