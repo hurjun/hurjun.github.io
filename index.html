@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jun Hur | Software Engineer · Reliable Cyber-Physical Systems</title>
-  <meta name="description" content="Jun Hur — software engineer building production systems across robotics, fintech, and healthcare since 2021, focused on the reliability of cyber-physical systems: cross-layer fault diagnosis, failure prediction from operational telemetry, and simulation-based validation before deployment." />
+  <meta name="description" content="Jun Hur — software engineer with 5+ years building production systems across robotics, fintech, and healthcare, focused on the reliability of cyber-physical systems: cross-layer fault diagnosis, failure prediction from operational telemetry, and simulation-based validation before deployment." />
   <meta name="author" content="Jun Hur" />
-  <meta name="theme-color" content="#f7f8fb" />
+  <meta name="theme-color" content="#0a192f" />
   <link rel="canonical" href="https://hurjun.github.io/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='20'%20fill='%230b7261'/%3E%3Ctext%20x='50'%20y='68'%20font-family='monospace'%20font-size='52'%20font-weight='700'%20fill='%23ffffff'%20text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='20'%20fill='%230a192f'/%3E%3Ctext%20x='50'%20y='68'%20font-family='monospace'%20font-size='52'%20font-weight='700'%20fill='%2364ffda'%20text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Jun Hur | Software Engineer · Reliable Cyber-Physical Systems" />
-  <meta property="og:description" content="Building robot fleet control, fintech, and healthcare systems since 2021 — researching how to make cyber-physical systems diagnosable across layers, predictable from telemetry, and validated in simulation before deployment." />
+  <meta property="og:description" content="5+ years building robot fleet control, fintech, and healthcare systems — researching how to make cyber-physical systems diagnosable across layers, predictable from telemetry, and validated in simulation before deployment." />
   <meta property="og:url" content="https://hurjun.github.io/" />
   <meta property="og:image" content="https://hurjun.github.io/asset/face.jpeg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Jun Hur | Software Engineer · Reliable Cyber-Physical Systems" />
-  <meta name="twitter:description" content="Building robot fleet control, fintech, and healthcare systems since 2021 — researching how to make cyber-physical systems diagnosable across layers, predictable from telemetry, and validated in simulation before deployment." />
+  <meta name="twitter:description" content="5+ years building robot fleet control, fintech, and healthcare systems — researching how to make cyber-physical systems diagnosable across layers, predictable from telemetry, and validated in simulation before deployment." />
   <meta name="twitter:image" content="https://hurjun.github.io/asset/face.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,31 +27,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* Light theme (default) — tuned for readability */
+    /* Dark theme */
     :root {
-      color-scheme: light;
-      --bg: #f7f8fb;
-      --bg-card: #ffffff;
-      --bg-mid: #eef1f6;
-      --text-strong: #0f2038;
-      --text: #35476a;
-      --text-muted: #51617f;
-      --accent: #0b7261;
-      --accent-dim: rgba(11, 114, 97, 0.08);
-      --border-faint: rgba(15, 32, 56, 0.07);
-      --border-subtle: rgba(15, 32, 56, 0.1);
-      --border-mid: rgba(15, 32, 56, 0.16);
-      --border-strong: rgba(11, 114, 97, 0.45);
-      --tag-bg: rgba(15, 32, 56, 0.04);
-      --tag-border: rgba(15, 32, 56, 0.14);
-      --tag-border-strong: rgba(15, 32, 56, 0.28);
-      --nav-bg: rgba(247, 248, 251, 0.92);
-      --shadow-card: 0 1px 2px rgba(15, 32, 56, 0.05), 0 6px 18px rgba(15, 32, 56, 0.06);
-      --font: 'Inter', sans-serif;
-    }
-
-    /* Dark theme (toggle) */
-    html[data-theme='dark'] {
       color-scheme: dark;
       --bg: #0a192f;
       --bg-card: #112240;
@@ -70,6 +47,7 @@
       --tag-border-strong: rgba(168, 178, 216, 0.3);
       --nav-bg: rgba(10, 25, 47, 0.95);
       --shadow-card: none;
+      --font: 'Inter', sans-serif;
     }
 
     html { scroll-behavior: smooth; }
@@ -123,31 +101,6 @@
     }
 
     .nav-links a:hover { color: var(--accent); }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    #theme-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 34px;
-      height: 34px;
-      background: transparent;
-      border: 1px solid var(--border-mid);
-      border-radius: 6px;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    #theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
-    #theme-toggle svg { width: 16px; height: 16px; }
-    html[data-theme='dark'] #theme-toggle .icon-moon { display: none; }
-    html:not([data-theme='dark']) #theme-toggle .icon-sun { display: none; }
 
     /* ── MAIN SECTIONS ── */
     section {
@@ -1092,8 +1045,9 @@
     }
 
     /* ── PRINT ── */
+    /* Print: force a light palette on paper */
     @media print {
-      :root, html[data-theme='dark'] {
+      :root {
         color-scheme: light;
         --bg: #ffffff;
         --bg-card: #ffffff;
@@ -1113,7 +1067,7 @@
         --nav-bg: #ffffff;
         --shadow-card: none;
       }
-      nav, #theme-toggle, #project-overlay, .hero-links .btn { display: none !important; }
+      nav, #project-overlay, .hero-links .btn { display: none !important; }
       #hero { min-height: auto; padding-top: 40px; }
       section { padding: 32px 0; }
     }
@@ -1133,38 +1087,20 @@
       .overlay-content { padding: 2rem 1.5rem 4rem; }
     }
   </style>
-  <script>
-    // Apply saved theme before first paint (default: light)
-    (function () {
-      var t = 'light';
-      try { t = localStorage.getItem('theme') || t; } catch (e) {}
-      document.documentElement.setAttribute('data-theme', t);
-      if (t === 'dark') {
-        var m = document.querySelector('meta[name="theme-color"]');
-        if (m) m.setAttribute('content', '#0a192f');
-      }
-    })();
-  </script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav id="main-nav">
     <a href="#hero" class="nav-logo">Jun Hur</a>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="#research">Research</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-      </ul>
-      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch color theme" title="Switch color theme">
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-      </button>
-    </div>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
   </nav>
 
   <!-- ══════════════ MAIN PAGE ══════════════ -->
@@ -1176,9 +1112,9 @@
       <div class="hero-text">
         <p class="hero-greeting">Full-Stack &amp; Robotics Software Engineer</p>
         <h1 class="hero-name">Jun Hur</h1>
-        <h2 class="hero-title">Software is deterministic. The world it runs in is not.</h2>
+        <h2 class="hero-title">I build software that keeps robot fleets running in the real world.</h2>
         <p class="hero-desc">
-          Since 2021 I have built production systems whose failures have physical
+          For 5+ years I have built production systems whose failures have physical
           consequences — robot fleets in hospitals, power plants, and construction
           sites — as well as data platforms in fintech and healthcare. That
           experience converged on one goal: engineering cyber-physical systems that
@@ -1728,26 +1664,6 @@
   </div>
 
   <script>
-    // ── Theme toggle ──
-    function toggleTheme() {
-      const root = document.documentElement;
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
-      try { localStorage.setItem('theme', next); } catch (e) {}
-      const meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', next === 'dark' ? '#0a192f' : '#f7f8fb');
-      syncThemeButton();
-    }
-
-    function syncThemeButton() {
-      const btn = document.getElementById('theme-toggle');
-      if (!btn) return;
-      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
-      btn.setAttribute('aria-pressed', String(dark));
-      btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
-    }
-    syncThemeButton();
-
     // ── Project Data ──
     const PROJECTS = {
       'gole-fms': {

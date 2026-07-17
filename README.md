@@ -1,6 +1,6 @@
 # hurjun.github.io
 
-Personal portfolio website for Jun Hur (허준) — a software engineer building production systems across robotics, fintech, and healthcare since 2021, focused on the reliability of cyber-physical systems: cross-layer fault diagnosis, failure prediction from operational telemetry, and simulation-based validation before deployment. The site is written in English for a US graduate-admissions audience and mirrors the narrative of the statement of purpose. It ships a light theme by default with a dark-mode toggle.
+Personal portfolio website for Jun Hur (허준) — a software engineer with 5+ years building production systems across robotics, fintech, and healthcare, focused on the reliability of cyber-physical systems: cross-layer fault diagnosis, failure prediction from operational telemetry, and simulation-based validation before deployment. The site is written in English for a US graduate-admissions audience and mirrors the narrative of the statement of purpose. Dark theme only, with a light palette applied when printing.
 
 🔗 **Live site:** [hurjun.github.io](https://hurjun.github.io)
 
