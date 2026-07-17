@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jun Hur | Robotics &amp; Full-Stack Software Engineer</title>
-  <meta name="description" content="Jun Hur — software engineer with 6+ years building production systems across robotics, fintech, and healthcare. Designed and built autonomous robot fleet control (FMS), multi-robot path planning, sim-to-real pipelines, and real-time monitoring systems." />
+  <title>Jun Hur | Software Engineer · Reliable Cyber-Physical Systems</title>
+  <meta name="description" content="Jun Hur — software engineer building production systems across robotics, fintech, and healthcare since 2021, focused on the reliability of cyber-physical systems: cross-layer fault diagnosis, failure prediction from operational telemetry, and simulation-based validation before deployment." />
   <meta name="author" content="Jun Hur" />
-  <meta name="theme-color" content="#0a192f" />
+  <meta name="theme-color" content="#f7f8fb" />
   <link rel="canonical" href="https://hurjun.github.io/" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='20'%20fill='%230a192f'/%3E%3Ctext%20x='50'%20y='68'%20font-family='monospace'%20font-size='52'%20font-weight='700'%20fill='%2364ffda'%20text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='20'%20fill='%230b7261'/%3E%3Ctext%20x='50'%20y='68'%20font-family='monospace'%20font-size='52'%20font-weight='700'%20fill='%23ffffff'%20text-anchor='middle'%3EJH%3C/text%3E%3C/svg%3E" />
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Jun Hur | Robotics &amp; Full-Stack Software Engineer" />
-  <meta property="og:description" content="Engineering across robotics, fintech, and healthcare — autonomous robot fleet control, simulation, and reliable systems for safety-critical environments." />
+  <meta property="og:title" content="Jun Hur | Software Engineer · Reliable Cyber-Physical Systems" />
+  <meta property="og:description" content="Building robot fleet control, fintech, and healthcare systems since 2021 — researching how to make cyber-physical systems diagnosable across layers, predictable from telemetry, and validated in simulation before deployment." />
   <meta property="og:url" content="https://hurjun.github.io/" />
   <meta property="og:image" content="https://hurjun.github.io/asset/face.jpeg" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Jun Hur | Robotics &amp; Full-Stack Software Engineer" />
-  <meta name="twitter:description" content="Engineering across robotics, fintech, and healthcare — autonomous robot fleet control, simulation, and reliable systems for safety-critical environments." />
+  <meta name="twitter:title" content="Jun Hur | Software Engineer · Reliable Cyber-Physical Systems" />
+  <meta name="twitter:description" content="Building robot fleet control, fintech, and healthcare systems since 2021 — researching how to make cyber-physical systems diagnosable across layers, predictable from telemetry, and validated in simulation before deployment." />
   <meta name="twitter:image" content="https://hurjun.github.io/asset/face.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,24 +27,57 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* Light theme (default) — tuned for readability */
     :root {
-      --navy: #0a192f;
-      --navy-light: #112240;
-      --navy-mid: #0d1b34;
-      --slate: #8892b0;
-      --slate-light: #a8b2d8;
-      --white: #e6f1ff;
+      color-scheme: light;
+      --bg: #f7f8fb;
+      --bg-card: #ffffff;
+      --bg-mid: #eef1f6;
+      --text-strong: #0f2038;
+      --text: #35476a;
+      --text-muted: #51617f;
+      --accent: #0b7261;
+      --accent-dim: rgba(11, 114, 97, 0.08);
+      --border-faint: rgba(15, 32, 56, 0.07);
+      --border-subtle: rgba(15, 32, 56, 0.1);
+      --border-mid: rgba(15, 32, 56, 0.16);
+      --border-strong: rgba(11, 114, 97, 0.45);
+      --tag-bg: rgba(15, 32, 56, 0.04);
+      --tag-border: rgba(15, 32, 56, 0.14);
+      --tag-border-strong: rgba(15, 32, 56, 0.28);
+      --nav-bg: rgba(247, 248, 251, 0.92);
+      --shadow-card: 0 1px 2px rgba(15, 32, 56, 0.05), 0 6px 18px rgba(15, 32, 56, 0.06);
+      --font: 'Inter', sans-serif;
+    }
+
+    /* Dark theme (toggle) */
+    html[data-theme='dark'] {
+      color-scheme: dark;
+      --bg: #0a192f;
+      --bg-card: #112240;
+      --bg-mid: #0d1b34;
+      --text-strong: #e6f1ff;
+      --text: #a8b2d8;
+      --text-muted: #8892b0;
       --accent: #64ffda;
       --accent-dim: rgba(100, 255, 218, 0.1);
-      --font: 'Inter', sans-serif;
+      --border-faint: rgba(100, 255, 218, 0.06);
+      --border-subtle: rgba(100, 255, 218, 0.08);
+      --border-mid: rgba(100, 255, 218, 0.13);
+      --border-strong: rgba(100, 255, 218, 0.28);
+      --tag-bg: rgba(255, 255, 255, 0.04);
+      --tag-border: rgba(168, 178, 216, 0.12);
+      --tag-border-strong: rgba(168, 178, 216, 0.3);
+      --nav-bg: rgba(10, 25, 47, 0.95);
+      --shadow-card: none;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--font);
-      background: var(--navy);
-      color: var(--slate-light);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -59,9 +92,9 @@
       align-items: center;
       padding: 0 3rem;
       height: 70px;
-      background: rgba(10, 25, 47, 0.95);
+      background: var(--nav-bg);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+      border-bottom: 1px solid var(--border-subtle);
       transition: opacity 0.2s;
     }
 
@@ -81,7 +114,7 @@
     }
 
     .nav-links a {
-      color: var(--slate-light);
+      color: var(--text);
       text-decoration: none;
       font-size: 0.82rem;
       font-weight: 500;
@@ -90,6 +123,31 @@
     }
 
     .nav-links a:hover { color: var(--accent); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    #theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: transparent;
+      border: 1px solid var(--border-mid);
+      border-radius: 6px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    #theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+    #theme-toggle svg { width: 16px; height: 16px; }
+    html[data-theme='dark'] #theme-toggle .icon-moon { display: none; }
+    html:not([data-theme='dark']) #theme-toggle .icon-sun { display: none; }
 
     /* ── MAIN SECTIONS ── */
     section {
@@ -104,7 +162,7 @@
       gap: 1rem;
       font-size: 1.4rem;
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-strong);
       margin-bottom: 2.5rem;
     }
 
@@ -112,7 +170,7 @@
       content: '';
       flex: 1;
       height: 1px;
-      background: rgba(100, 255, 218, 0.12);
+      background: var(--border-mid);
     }
 
     .section-number {
@@ -149,7 +207,7 @@
     .hero-name {
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-strong);
       line-height: 1.1;
       margin-bottom: 0.5rem;
     }
@@ -157,14 +215,14 @@
     .hero-title {
       font-size: clamp(1.1rem, 2.5vw, 1.6rem);
       font-weight: 500;
-      color: var(--slate);
+      color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
 
     .hero-desc {
-      max-width: 480px;
-      color: var(--slate);
-      font-size: 0.95rem;
+      max-width: 540px;
+      color: var(--text-muted);
+      font-size: 0.97rem;
       line-height: 1.8;
       margin-bottom: 2rem;
     }
@@ -196,8 +254,8 @@
     .btn-outline:hover { background: var(--accent-dim); }
 
     .btn-ghost {
-      border: 1px solid rgba(168, 178, 216, 0.3);
-      color: var(--slate-light);
+      border: 1px solid var(--tag-border-strong);
+      color: var(--text);
       background: transparent;
     }
 
@@ -208,7 +266,7 @@
       align-items: center;
       gap: 0.4rem;
       font-size: 0.88rem;
-      color: var(--slate-light);
+      color: var(--text);
       user-select: all;
     }
 
@@ -240,7 +298,7 @@
     }
 
     .about-text {
-      color: var(--slate);
+      color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.85;
       margin-bottom: 1rem;
@@ -249,16 +307,17 @@
     .about-text strong { color: var(--accent); font-weight: 500; }
 
     .about-highlights {
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 1.25rem;
+      box-shadow: var(--shadow-card);
     }
 
     .highlight-item {
       text-align: center;
       padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(100, 255, 218, 0.06);
+      border-bottom: 1px solid var(--border-faint);
     }
 
     .highlight-item:last-child { border-bottom: none; }
@@ -272,14 +331,14 @@
 
     .highlight-label {
       font-size: 0.72rem;
-      color: var(--slate);
+      color: var(--text-muted);
       margin-top: 0.2rem;
       line-height: 1.3;
     }
 
     /* ── RESEARCH INTERESTS ── */
     .research-intro {
-      color: var(--slate);
+      color: var(--text-muted);
       font-size: 0.97rem;
       line-height: 1.85;
       max-width: 760px;
@@ -287,7 +346,7 @@
     }
 
     .research-intro strong { color: var(--accent); font-weight: 500; }
-    .research-intro em { color: var(--slate-light); font-style: italic; }
+    .research-intro em { color: var(--text); font-style: italic; }
 
     .research-grid {
       display: grid;
@@ -296,22 +355,23 @@
     }
 
     .research-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 1.3rem 1.4rem;
+      box-shadow: var(--shadow-card);
       transition: border-color 0.2s, transform 0.2s;
     }
 
     .research-card:hover {
-      border-color: rgba(100, 255, 218, 0.25);
+      border-color: var(--border-strong);
       transform: translateY(-3px);
     }
 
     .research-card h3 {
       font-size: 0.92rem;
       font-weight: 600;
-      color: var(--white);
+      color: var(--text-strong);
       margin-bottom: 0.5rem;
       display: flex;
       align-items: baseline;
@@ -325,9 +385,17 @@
     }
 
     .research-card p {
-      font-size: 0.83rem;
-      color: var(--slate);
-      line-height: 1.65;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .research-foundations {
+      margin-top: 1.6rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 760px;
     }
 
     /* ── EXPERIENCE ── */
@@ -338,14 +406,14 @@
       grid-template-columns: 130px 1fr;
       gap: 0 2rem;
       padding: 1.75rem 0;
-      border-bottom: 1px solid rgba(100, 255, 218, 0.06);
+      border-bottom: 1px solid var(--border-faint);
     }
 
     .exp-item:last-child { border-bottom: none; }
 
     .exp-period {
       font-size: 0.75rem;
-      color: var(--slate);
+      color: var(--text-muted);
       font-family: monospace;
       padding-top: 3px;
       line-height: 1.6;
@@ -354,7 +422,7 @@
     .exp-role {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--white);
+      color: var(--text-strong);
       margin-bottom: 0.15rem;
     }
 
@@ -367,7 +435,7 @@
     .exp-company a {
       color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+      border-bottom: 1px solid var(--border-strong);
       transition: border-color 0.2s;
     }
 
@@ -384,7 +452,7 @@
       font-size: 0.72rem;
       color: var(--accent);
       background: var(--accent-dim);
-      border: 1px solid rgba(100, 255, 218, 0.15);
+      border: 1px solid var(--border-mid);
       border-radius: 3px;
       padding: 0.15rem 0.5rem;
       font-family: monospace;
@@ -398,11 +466,11 @@
     }
 
     .exp-bullets li {
-      font-size: 0.875rem;
-      color: var(--slate);
+      font-size: 0.895rem;
+      color: var(--text-muted);
       padding-left: 1.25rem;
       position: relative;
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     .exp-bullets li::before {
@@ -412,7 +480,7 @@
       color: var(--accent);
     }
 
-    .exp-bullets li strong { color: var(--slate-light); font-weight: 500; }
+    .exp-bullets li strong { color: var(--text); font-weight: 500; }
 
     /* ── PROJECT CARDS ── */
     .projects-grid {
@@ -422,21 +490,22 @@
     }
 
     .project-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
       cursor: pointer;
+      box-shadow: var(--shadow-card);
       transition: border-color 0.2s, transform 0.2s;
       text-decoration: none;
       color: inherit;
     }
 
     .project-card:hover {
-      border-color: rgba(100, 255, 218, 0.3);
+      border-color: var(--border-strong);
       transform: translateY(-4px);
     }
 
@@ -445,8 +514,8 @@
       height: 150px;
       border-radius: 5px;
       overflow: hidden;
-      background: var(--navy-mid);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-mid);
+      border: 1px solid var(--border-subtle);
       flex-shrink: 0;
     }
 
@@ -466,7 +535,7 @@
     .project-name {
       font-size: 0.95rem;
       font-weight: 600;
-      color: var(--white);
+      color: var(--text-strong);
     }
 
     .project-company {
@@ -477,8 +546,8 @@
     }
 
     .project-desc {
-      font-size: 0.83rem;
-      color: var(--slate);
+      font-size: 0.865rem;
+      color: var(--text-muted);
       line-height: 1.65;
       flex: 1;
     }
@@ -491,9 +560,9 @@
 
     .project-tags .tag {
       font-size: 0.7rem;
-      color: var(--slate);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(168, 178, 216, 0.12);
+      color: var(--text-muted);
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
       border-radius: 3px;
       padding: 0.15rem 0.45rem;
       font-family: monospace;
@@ -512,9 +581,9 @@
 
     .card-visit {
       font-size: 0.75rem;
-      color: var(--slate);
+      color: var(--text-muted);
       text-decoration: none;
-      border-bottom: 1px solid rgba(168,178,216,0.2);
+      border-bottom: 1px solid var(--tag-border-strong);
       transition: color 0.2s, border-color 0.2s;
     }
 
@@ -527,7 +596,7 @@
       font-size: 0.82rem;
       color: var(--accent);
       text-decoration: none;
-      border: 1px solid rgba(100,255,218,0.25);
+      border: 1px solid var(--border-strong);
       border-radius: 4px;
       padding: 0.4rem 0.9rem;
       margin-top: 0.5rem;
@@ -540,13 +609,13 @@
     .oss-subhead {
       font-size: 1.05rem;
       font-weight: 600;
-      color: var(--white);
+      color: var(--text-strong);
       margin: 3.25rem 0 0.4rem;
     }
 
     .oss-intro {
       font-size: 0.88rem;
-      color: var(--slate);
+      color: var(--text-muted);
       line-height: 1.7;
       max-width: 720px;
       margin-bottom: 1.5rem;
@@ -555,7 +624,7 @@
     .oss-intro a {
       color: var(--accent);
       text-decoration: none;
-      border-bottom: 1px solid rgba(100, 255, 218, 0.3);
+      border-bottom: 1px solid var(--border-strong);
     }
 
     .oss-grid {
@@ -565,8 +634,8 @@
     }
 
     .oss-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 1.25rem 1.4rem;
       display: flex;
@@ -574,11 +643,12 @@
       gap: 0.6rem;
       text-decoration: none;
       color: inherit;
+      box-shadow: var(--shadow-card);
       transition: border-color 0.2s, transform 0.2s;
     }
 
     .oss-card:hover {
-      border-color: rgba(100, 255, 218, 0.3);
+      border-color: var(--border-strong);
       transform: translateY(-3px);
     }
 
@@ -592,7 +662,7 @@
     .oss-name {
       font-size: 0.92rem;
       font-weight: 600;
-      color: var(--white);
+      color: var(--text-strong);
       line-height: 1.35;
     }
 
@@ -605,13 +675,13 @@
     }
 
     .oss-desc {
-      font-size: 0.82rem;
-      color: var(--slate);
+      font-size: 0.855rem;
+      color: var(--text-muted);
       line-height: 1.65;
       flex: 1;
     }
 
-    .oss-desc strong { color: var(--slate-light); font-weight: 500; }
+    .oss-desc strong { color: var(--text); font-weight: 500; }
 
     .oss-tags {
       display: flex;
@@ -621,9 +691,9 @@
 
     .oss-tags .tag {
       font-size: 0.7rem;
-      color: var(--slate);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(168, 178, 216, 0.12);
+      color: var(--text-muted);
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
       border-radius: 3px;
       padding: 0.15rem 0.45rem;
       font-family: monospace;
@@ -637,14 +707,15 @@
     }
 
     .skill-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       border-radius: 6px;
       padding: 1.2rem 1.4rem;
+      box-shadow: var(--shadow-card);
       transition: border-color 0.2s;
     }
 
-    .skill-card:hover { border-color: rgba(100, 255, 218, 0.22); }
+    .skill-card:hover { border-color: var(--border-strong); }
 
     .skill-category {
       font-size: 0.7rem;
@@ -659,9 +730,9 @@
 
     .tag {
       font-size: 0.77rem;
-      color: var(--slate-light);
-      background: rgba(100, 255, 218, 0.05);
-      border: 1px solid rgba(100, 255, 218, 0.1);
+      color: var(--text);
+      background: var(--tag-bg);
+      border: 1px solid var(--border-mid);
       border-radius: 3px;
       padding: 0.2rem 0.5rem;
     }
@@ -670,28 +741,39 @@
     .edu-list { display: flex; flex-direction: column; gap: 1rem; }
 
     .edu-item {
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       border-radius: 6px;
       padding: 1.2rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      box-shadow: var(--shadow-card);
     }
 
     .edu-degree {
       font-size: 0.95rem;
       font-weight: 600;
-      color: var(--white);
+      color: var(--text-strong);
       margin-bottom: 0.2rem;
     }
 
     .edu-school { font-size: 0.85rem; color: var(--accent); }
 
+    .edu-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    .edu-note strong { color: var(--text); font-weight: 500; }
+
     .edu-period {
       font-size: 0.78rem;
-      color: var(--slate);
+      color: var(--text-muted);
       font-family: monospace;
       white-space: nowrap;
       flex-shrink: 0;
@@ -705,13 +787,13 @@
       font-size: 0.78rem;
       color: var(--accent);
       text-decoration: none;
-      border: 1px solid rgba(100, 255, 218, 0.3);
+      border: 1px solid var(--border-strong);
       border-radius: 4px;
       padding: 0.2rem 0.55rem;
       transition: background 0.2s, border-color 0.2s;
     }
     .paper-download:hover {
-      background: rgba(100, 255, 218, 0.08);
+      background: var(--accent-dim);
       border-color: var(--accent);
     }
 
@@ -721,7 +803,7 @@
     .contact-desc {
       max-width: 480px;
       margin: 0 auto 2rem;
-      color: var(--slate);
+      color: var(--text-muted);
       font-size: 0.95rem;
       line-height: 1.8;
     }
@@ -737,7 +819,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--slate-light);
+      color: var(--text);
       text-decoration: none;
       font-size: 0.88rem;
       transition: color 0.2s;
@@ -749,9 +831,9 @@
     footer {
       text-align: center;
       padding: 2rem;
-      color: var(--slate);
+      color: var(--text-muted);
       font-size: 0.75rem;
-      border-top: 1px solid rgba(100, 255, 218, 0.06);
+      border-top: 1px solid var(--border-faint);
       margin-top: 2rem;
     }
 
@@ -762,7 +844,7 @@
       position: fixed;
       inset: 0;
       z-index: 200;
-      background: var(--navy);
+      background: var(--bg);
       overflow-y: auto;
       transform: translateX(100%);
       transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -781,9 +863,9 @@
       gap: 1rem;
       padding: 0 3rem;
       height: 70px;
-      background: rgba(10, 25, 47, 0.97);
+      background: var(--nav-bg);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(100, 255, 218, 0.08);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .back-btn {
@@ -805,7 +887,7 @@
 
     .overlay-nav-title {
       font-size: 0.9rem;
-      color: var(--slate-light);
+      color: var(--text);
       font-weight: 500;
     }
 
@@ -824,7 +906,7 @@
     .overlay-title {
       font-size: clamp(1.5rem, 4vw, 2.2rem);
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-strong);
       line-height: 1.2;
       margin-bottom: 0.4rem;
     }
@@ -845,7 +927,7 @@
 
     .overlay-period {
       font-size: 0.8rem;
-      color: var(--slate);
+      color: var(--text-muted);
       font-family: monospace;
     }
 
@@ -858,8 +940,9 @@
       width: 100%;
       border-radius: 8px;
       overflow: hidden;
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-card);
       margin-bottom: 0.75rem;
       position: relative;
       max-height: 520px;
@@ -880,7 +963,7 @@
 
     .img-placeholder {
       text-align: center;
-      color: var(--slate);
+      color: var(--text-muted);
       padding: 2rem;
     }
 
@@ -919,7 +1002,7 @@
       overflow: hidden;
       border: 2px solid transparent;
       cursor: pointer;
-      background: var(--navy-light);
+      background: var(--bg-card);
       transition: border-color 0.2s;
       flex-shrink: 0;
     }
@@ -952,12 +1035,12 @@
 
     .overlay-description p {
       font-size: 0.92rem;
-      color: var(--slate);
+      color: var(--text-muted);
       line-height: 1.85;
       margin-bottom: 1rem;
     }
 
-    .overlay-description p strong { color: var(--slate-light); font-weight: 500; }
+    .overlay-description p strong { color: var(--text); font-weight: 500; }
 
     .overlay-features {
       list-style: none;
@@ -966,7 +1049,7 @@
 
     .overlay-features li {
       font-size: 0.88rem;
-      color: var(--slate);
+      color: var(--text-muted);
       padding-left: 1.25rem;
       position: relative;
       line-height: 1.65;
@@ -980,16 +1063,17 @@
       color: var(--accent);
     }
 
-    .overlay-features li strong { color: var(--slate-light); font-weight: 500; }
+    .overlay-features li strong { color: var(--text); font-weight: 500; }
 
     .overlay-sidebar {}
 
     .sidebar-card {
-      background: var(--navy-light);
-      border: 1px solid rgba(100, 255, 218, 0.08);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       border-radius: 8px;
       padding: 1.25rem;
       margin-bottom: 1rem;
+      box-shadow: var(--shadow-card);
     }
 
     .sidebar-tags {
@@ -1000,11 +1084,38 @@
 
     .sidebar-tags .tag {
       font-size: 0.75rem;
-      color: var(--slate-light);
-      background: rgba(100, 255, 218, 0.05);
-      border: 1px solid rgba(100, 255, 218, 0.1);
+      color: var(--text);
+      background: var(--tag-bg);
+      border: 1px solid var(--border-mid);
       border-radius: 3px;
       padding: 0.2rem 0.55rem;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      :root, html[data-theme='dark'] {
+        color-scheme: light;
+        --bg: #ffffff;
+        --bg-card: #ffffff;
+        --bg-mid: #f2f2f2;
+        --text-strong: #111111;
+        --text: #222222;
+        --text-muted: #3c3c3c;
+        --accent: #0b7261;
+        --accent-dim: transparent;
+        --border-faint: rgba(0, 0, 0, 0.1);
+        --border-subtle: rgba(0, 0, 0, 0.15);
+        --border-mid: rgba(0, 0, 0, 0.25);
+        --border-strong: rgba(0, 0, 0, 0.4);
+        --tag-bg: transparent;
+        --tag-border: rgba(0, 0, 0, 0.25);
+        --tag-border-strong: rgba(0, 0, 0, 0.4);
+        --nav-bg: #ffffff;
+        --shadow-card: none;
+      }
+      nav, #theme-toggle, #project-overlay, .hero-links .btn { display: none !important; }
+      #hero { min-height: auto; padding-top: 40px; }
+      section { padding: 32px 0; }
     }
 
     /* ── RESPONSIVE ── */
@@ -1022,20 +1133,38 @@
       .overlay-content { padding: 2rem 1.5rem 4rem; }
     }
   </style>
+  <script>
+    // Apply saved theme before first paint (default: light)
+    (function () {
+      var t = 'light';
+      try { t = localStorage.getItem('theme') || t; } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'dark') {
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', '#0a192f');
+      }
+    })();
+  </script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav id="main-nav">
     <a href="#hero" class="nav-logo">Jun Hur</a>
-    <ul class="nav-links">
-      <li><a href="#research">Interests</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+      <button id="theme-toggle" onclick="toggleTheme()" aria-label="Switch color theme" title="Switch color theme">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+      </button>
+    </div>
   </nav>
 
   <!-- ══════════════ MAIN PAGE ══════════════ -->
@@ -1047,13 +1176,15 @@
       <div class="hero-text">
         <p class="hero-greeting">Full-Stack &amp; Robotics Software Engineer</p>
         <h1 class="hero-name">Jun Hur</h1>
-        <h2 class="hero-title">I build software that moves the physical world.</h2>
+        <h2 class="hero-title">Software is deterministic. The world it runs in is not.</h2>
         <p class="hero-desc">
-          I have spent 6+ years building production systems across robotics, fintech,
-          and healthcare — from autonomous robot fleet control to multi-robot path
-          planning and sim-to-real. I care most about turning complex data into
-          systems that people in the field can understand, trust, and act on —
-          especially where software failure has physical consequences.
+          Since 2021 I have built production systems whose failures have physical
+          consequences — robot fleets in hospitals, power plants, and construction
+          sites — as well as data platforms in fintech and healthcare. That
+          experience converged on one goal: engineering cyber-physical systems that
+          are diagnosable across layers, predictable from telemetry, and validated
+          in simulation before deployment — the research I am preparing to pursue
+          in graduate school.
         </p>
         <div class="hero-links">
           <span class="hero-email">
@@ -1080,38 +1211,35 @@
 
   <!-- RESEARCH INTERESTS -->
   <section id="research">
-    <h2 class="section-title"><span class="section-number">01.</span> Interests</h2>
+    <h2 class="section-title"><span class="section-number">01.</span> Research Interests</h2>
     <p class="research-intro">
-      Working across robotics, financial analytics, and healthcare, I kept running into the same problem:
-      data is easier to collect than ever and models keep getting stronger, yet the people on site still
-      struggle to judge what a result <em>means</em> and what to do next. This matters most in
-      <strong>safety-critical, physical environments</strong> — construction and industrial sites where
-      software, equipment, and people are directly coupled — and it is why I care about
-      <strong>reliable, well-engineered software</strong>: systems whose behavior under failure is
-      understood, not assumed. These are the areas I dig into.
+      Years spent operating robot fleets and financial data pipelines — and building clinical software —
+      kept teaching me the same lesson: <strong>software is deterministic, but the world it runs in is
+      not</strong>. The same code under the same conditions delivered an MQTT message only two times out
+      of three; an overheated camera flooded the control screen with green; a company name slipped into
+      an integer-only database column and froze production. Rather than fixing such failures one at a
+      time, I want to study general methods for <strong>engineering reliable cyber-physical
+      systems</strong>. Three questions drive that goal, each rooted in a system I built and operated.
     </p>
     <div class="research-grid">
       <div class="research-card">
-        <h3><span class="r-num">01</span> Field &amp; Industrial Automation (Physical AI)</h3>
-        <p>Systems that let autonomous robots and automated equipment carry out on-site work in place of people. I currently build the full stack of a fleet management system operating real autonomous robot fleets.</p>
+        <h3><span class="r-num">01</span> Diagnosis — Cross-Layer Fault Localization</h3>
+        <p>When a robot fails silently, the cause can hide in any of five layers: the control frontend, the backend, the MQTT broker, the robot's ROS stack, or the site network. What observability data and causal models does it take to localize such faults automatically — instead of three teams reconciling logs for half a day?</p>
       </div>
       <div class="research-card">
-        <h3><span class="r-num">02</span> Multi-Robot Path Planning &amp; Coordination (MAPF)</h3>
-        <p>Planning that moves many robots and machines efficiently without collisions. I built a construction-site simulator with a MAPF engine implemented from scratch in TypeScript.</p>
+        <h3><span class="r-num">02</span> Prevention — Failure Prediction from Telemetry</h3>
+        <p>Operating 30+ robots, I found that anomalies in MQTT message frequency preceded customers' failure reports — an indirect signal, not an error log. How far do early-warning signals like this generalize, and how can operational telemetry predict failures before they become incidents?</p>
       </div>
       <div class="research-card">
-        <h3><span class="r-num">03</span> Sim-to-Real &amp; Reinforcement Learning</h3>
-        <p>Reliably transferring robot behavior learned in simulation to real hardware. I design reinforcement-learning training pipelines on NVIDIA Isaac Sim / Isaac Lab.</p>
-      </div>
-      <div class="research-card">
-        <h3><span class="r-num">04</span> Digital Twins &amp; Simulation</h3>
-        <p>Replicating physical systems virtually to verify and optimize them. I built a C++ digital twin of nuclear power plant calculation logic and robot simulation environments.</p>
-      </div>
-      <div class="research-card">
-        <h3><span class="r-num">05</span> Real-Time Monitoring &amp; Operational Decisions</h3>
-        <p>Monitoring and control systems that turn large-scale telemetry into operational judgment people can trust. I have built MQTT/WebSocket real-time control and vision-AI safety monitoring.</p>
+        <h3><span class="r-num">03</span> Validation — Simulation &amp; Digital Twins Before Deployment</h3>
+        <p>I validate robot behavior in NVIDIA Isaac Sim / Isaac Lab with domain randomization, and have built a from-scratch MAPF simulator that sizes robot fleets and elevators before construction-site deployment. How do we generate the rare scenarios that matter, and quantify what a passing simulation actually guarantees about field reliability?</p>
       </div>
     </div>
+    <p class="research-foundations">
+      Engineering foundations behind these questions: real-time fleet control (MQTT · VDA5050 · WebSocket),
+      multi-robot path planning (MAPF), reinforcement learning and sim-to-real on Isaac Sim / Isaac Lab,
+      digital twins, and large-scale telemetry monitoring.
+    </p>
   </section>
 
   <!-- ABOUT -->
@@ -1120,32 +1248,34 @@
     <div class="about-grid">
       <div>
         <p class="about-text">
-          My interest in human-centered technology began outside engineering. While going through
-          immigration paperwork in Nepal, my wife's home country, I watched government officials fill
-          out every document by hand — not because technology didn't exist, but because it didn't fit
-          how people actually worked. That lesson has stayed with me: a system's value is determined
-          not only by what it can do, but by how well it fits the abilities, habits, and needs of the
-          people who use it.
+          One morning a customer called before our monitoring did: <strong>their robot hadn't moved all
+          night</strong>. Its 2 a.m. outdoor patrol at a power plant — a circuit of the grounds,
+          monitoring for hazardous gas — had never started. The command had vanished silently in one of
+          five layers: the control frontend, the backend, the MQTT broker, the robot's ROS stack, or the
+          site network — and no one at the company could see all five at once. Three teams spent half a
+          day reconciling separate logs before we found the cause.
         </p>
         <p class="about-text">
-          Over the past six years I have built systems that keep bringing that lesson back — a robot
-          fleet-control platform at <strong>DOGU Robotics</strong>, financial and carbon-risk analytics at
-          <strong>Niflers</strong>, a clinical voice-documentation tool, and most recently autonomous robot
-          fleet control and robot simulation at <strong>GoLe Robotics</strong>. The domains were completely
-          different, but users never wanted more data — they wanted systems that helped them understand
-          complex information, see what mattered, and decide what to do next.
+          I had joined as a frontend developer, and I couldn't accept that half-day. I studied the
+          backend, the database, and ROS after hours until, two years later, I was the only engineer in
+          the company who could trace a failure alone from the control screen down into the robot. The
+          same pattern followed me from robot fleet control at <strong>DOGU Robotics</strong>, to fintech
+          data platforms at <strong>Niflers</strong>, to autonomous-robot fleet management and simulation
+          at <strong>GoLe Robotics</strong>. School taught me that computers do what the code says; the
+          field disproved it daily.
         </p>
         <p class="about-text">
-          That experience became how I work. Good software is judged not only by what it can do, but by
-          whether the people in the field can <strong>understand it, trust it, and act on it</strong> —
-          and the more directly safety, people, and machinery are coupled, as on a construction site or
-          in a hospital, the more that principle matters, and the more rigorously the software itself
-          must be engineered.
+          Across all three companies, one conclusion held: <strong>reliability is not a property of
+          correct code, but of design that assumes failure</strong> — observability, data integrity, and
+          validation before change. I now want to move beyond fixing failures one at a time and study
+          generalizable methods. I am preparing for graduate study in the US — an MS leading to a PhD —
+          with research on making cyber-physical systems diagnosable, predictable, and validated before
+          deployment.
         </p>
       </div>
       <div class="about-highlights">
         <div class="highlight-item">
-          <div class="highlight-num">6+</div>
+          <div class="highlight-num">5+</div>
           <div class="highlight-label">years building production systems</div>
         </div>
         <div class="highlight-item">
@@ -1248,8 +1378,8 @@
             <li>Implemented real-time control and monitoring over the <strong>MQTT-based VDA5050 AMR standard</strong> with <strong>WebSocket live feeds</strong> — snapshot-plus-incremental updates, render throttling, and automatic backoff reconnection for unattended sites.</li>
             <li>Built a <strong>visual scenario editor</strong> where operators draw over SLAM maps and place direction-aware navigation nodes to compose routes — saved missions are validated and compiled into <strong>VDA5050 orders</strong> using resolution-independent coordinates.</li>
             <li>Designed <strong>cargo (roll-container) tracking</strong>, the most-used feature in the system — pickup/drop-off history with automatically captured photos, per-robot throughput analytics, recurring schedules, and elevator-integrated multi-floor delivery.</li>
-            <li>Designed the <strong>PostgreSQL</strong> backend with <strong>role-based access control</strong> (admin/employee/client, enforced on both client and server) and centralized logging that distinguishes network, authentication, and database failures — operational issues are traceable directly from the database.</li>
-            <li>Working on <strong>sim-to-real</strong> in the <strong>NVIDIA robotics ecosystem</strong> — building simulation environments in <strong>Isaac Sim / Isaac Lab</strong>, designing <strong>reinforcement learning</strong> training pipelines, and using world foundation models (NVIDIA Cosmos) with domain randomization and GPU-accelerated training.</li>
+            <li>Designed the <strong>PostgreSQL</strong> backend with <strong>role-based access control</strong> (admin/employee/client, enforced on both client and server) and centralized logging that distinguishes network, authentication, and database failures — <strong>designed in from day one rather than added after incidents</strong>, so operational issues are traceable directly from the database.</li>
+            <li>Working on <strong>sim-to-real</strong> in the <strong>NVIDIA robotics ecosystem</strong> — building simulation environments in <strong>Isaac Sim / Isaac Lab</strong>, designing <strong>reinforcement learning</strong> training pipelines, and using world foundation models (NVIDIA Cosmos) with domain randomization — <strong>validating robot behavior before it reaches the site</strong>.</li>
           </ul>
         </div>
       </div>
@@ -1268,9 +1398,10 @@
             <span class="stack-tag">React</span><span class="stack-tag">TypeScript</span>
           </div>
           <ul class="exp-bullets">
-            <li><strong>Sole owner of all web development</strong> — frontend, backend, infrastructure, and deployment, with no other developer on the team.</li>
+            <li><strong>Sole owner of all web development</strong> — frontend, backend, infrastructure, and deployment.</li>
             <li>Designed MySQL schemas and indexing for <strong>KED and FnGuide</strong> financial data, with a daily automated ingestion pipeline running on Docker + Nginx on Linux.</li>
             <li>Refactored a <strong>20,000+ line monolithic script</strong>, cutting report generation time <strong>from 10 minutes to 2</strong>.</li>
+            <li>Learned reliability the hard way through <strong>two production incidents</strong>: a 20-process parallel loader wrote a company name into an integer-constrained column and froze the database, and a framework upgrade silently broke every API overnight — neither was a coding problem, and both reshaped how I design for <strong>data integrity, observability, and validated change</strong>.</li>
             <li>Built a carbon-risk reporting system that auto-generates <strong>200,000+ corporate reports</strong> using Pandas, algorithmic optimization, and multiprocessing — scaled from 0 to 100 users.</li>
             <li>Developed backend APIs for <strong>crisk.co.kr</strong>: Spring Boot for authentication, email, and sign-up; FastAPI for financial data and report endpoints.</li>
             <li>Designed parallel pipelines on <strong>AWS ECS + Step Functions</strong> for daily financial data loads, with CI/CD via CodeCommit and CodeDeploy.</li>
@@ -1292,10 +1423,12 @@
           </div>
           <ul class="exp-bullets">
             <li>Built the fleet-control platform managing <strong>30+ robots across 10+ sites</strong> — hospitals, outdoor environments, and factories.</li>
+            <li>After a scheduled patrol was lost somewhere in a five-layer stack, taught myself the <strong>backend, database, and ROS</strong> after hours until I could trace a fault end to end — <strong>from the control screen to the robot's internals</strong>.</li>
             <li>Implemented <strong>WebRTC video streaming</strong> and <strong>MQTT-based</strong> robot control and monitoring, with <strong>Grafana dashboards</strong> for data visualization.</li>
-            <li>Discovered that <strong>anomalies in MQTT message frequency often predicted robot failures before customers reported them</strong>, and built monitoring around that signal so engineers could respond <strong>proactively</strong> instead of waiting for complaints.</li>
+            <li>Discovered that <strong>anomalies in MQTT message frequency often predicted robot failures before customers reported them</strong>, and built monitoring around that signal — with no extra instrumentation — so engineers could respond <strong>proactively</strong> instead of waiting for complaints.</li>
+            <li>Shipped <strong>branching diagnostic scripts</strong> that field engineers used to localize faults by elimination — battery, then network, then software.</li>
             <li>Migrated the frontend <strong>from Vue.js to React</strong> and standardized components across 10+ site-specific deployments.</li>
-            <li>Delivered to major clients: <strong>Hyundai, SK hynix, GS EPS</strong>.</li>
+            <li>Deployed for major clients including <strong>Hyundai, SK hynix, and GS EPS</strong>.</li>
             <li>Organized internal developer conferences and study groups on Git, clean code, and engineering culture.</li>
           </ul>
         </div>
@@ -1379,7 +1512,7 @@
         <div class="project-thumb"><img src="asset/credit-imbalance.png" alt="Credit Imbalance Tracker screenshot" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='📊'" /></div>
         <div class="project-name">Credit Imbalance Tracker</div>
         <div class="project-company">@ Niflers — used by major banks &amp; asset appraisers</div>
-        <p class="project-desc">Corporate financial-health visualization service for banks and asset appraisers — built with advanced data charts under a tight deadline.</p>
+        <p class="project-desc">Corporate financial-health visualization service for banks and asset appraisers — dashboards of complex financial indicators (CIT Score, Industrial Risk, Early Warning Signal), built end to end.</p>
         <div class="project-tags">
           <span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">MUI Premium</span><span class="tag">MySQL</span>
         </div>
@@ -1442,9 +1575,9 @@
     <h3 class="oss-subhead">Selected Open-Source Projects</h3>
     <p class="oss-intro">
       Projects on <a href="https://github.com/hurjun" target="_blank" rel="noopener">github.com/hurjun</a> where
-      I dig directly into the interests above &mdash; multi-robot coordination, sequence models, and efficient ML systems.
-      Every repository is reproducible, tested, and honest about its results. The numbers below are actual measurements
-      recorded in each README.
+      I dig into the research questions above and the foundations beneath them &mdash; multi-robot coordination,
+      simulation-based validation, sequence models, and efficient ML systems. Every repository is reproducible and
+      tested, and the numbers below are actual measurements recorded in each README.
     </p>
     <div class="oss-grid">
 
@@ -1453,7 +1586,7 @@
           <span class="oss-name">MAPF Fleet &mdash; Multi-Robot Construction Site Simulator</span>
           <span class="oss-repo">GitHub ↗</span>
         </div>
-        <p class="oss-desc">Real-time 3D simulation of multi-robot fleets on multi-floor sites. Features a <strong>MAPF engine implemented from scratch in TypeScript</strong> (windowed cooperative A*, Conflict-Based Search), capacity-limited elevators, and live fleet-size optimization. Sustained <strong>zero collisions across 66 headless benchmark runs / 21,000+ simulation ticks</strong>.</p>
+        <p class="oss-desc">Real-time 3D simulation of multi-robot fleets on multi-floor sites. Features a <strong>MAPF engine implemented from scratch in TypeScript</strong> (windowed cooperative A*, Conflict-Based Search), capacity-limited elevators, and live fleet-size optimization. Sustained <strong>zero collisions across 66 headless benchmark runs / 21,000+ simulation ticks</strong>. The origin of my third research question: validating a deployment in simulation before it happens.</p>
         <div class="oss-tags">
           <span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">React Three Fiber</span><span class="tag">MAPF</span>
         </div>
@@ -1519,7 +1652,7 @@
           <span class="oss-name">Stock Forecast Benchmark</span>
           <span class="oss-repo">GitHub ↗</span>
         </div>
-        <p class="oss-desc">Config-driven, leakage-controlled benchmark comparing <strong>9 time-series forecasting models</strong> (ARIMA, ETS, Prophet, XGBoost, LightGBM, LSTM, GRU, TCN, Transformer) on 1962&ndash;1992 &rarr; 1993&ndash;2000 stock data. <strong>Prophet ranks first overall (RMSE 160)</strong>, with an honest analysis of why the deep learning models underperform here.</p>
+        <p class="oss-desc">Config-driven, leakage-controlled benchmark comparing <strong>9 time-series forecasting models</strong> (ARIMA, ETS, Prophet, XGBoost, LightGBM, LSTM, GRU, TCN, Transformer) on 1962&ndash;1992 &rarr; 1993&ndash;2000 stock data. <strong>Prophet ranks first overall (RMSE 160)</strong>, with an analysis of why the deep-learning models underperform here.</p>
         <div class="oss-tags">
           <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Forecasting</span>
         </div>
@@ -1536,6 +1669,7 @@
         <div>
           <div class="edu-degree">B.S. in Computer Science &amp; Engineering</div>
           <div class="edu-school">Chungnam National University</div>
+          <p class="edu-note">Completed the degree while working full-time as a software engineer from 2021 onward. Thesis: an AI-speaker nursing-documentation assistant that cut charting time by up to <strong>96%</strong> in evaluation.</p>
           <a href="asset/graduation_paper.pdf" download class="paper-download">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Graduation Thesis
@@ -1545,8 +1679,11 @@
       </div>
       <div class="edu-item">
         <div>
-          <div class="edu-degree">TOEFL 4.5</div>
+          <div class="edu-degree">Grand Prize — Software Implementation Competition</div>
+          <div class="edu-school">Korean Institute of Information Scientists and Engineers (KIISE)</div>
+          <p class="edu-note">For <strong>Reacord</strong>, a real-time lecture-transcription app built and released for deaf and hard-of-hearing classmates.</p>
         </div>
+        <div class="edu-period">2017</div>
       </div>
     </div>
   </section>
@@ -1583,6 +1720,26 @@
   </div>
 
   <script>
+    // ── Theme toggle ──
+    function toggleTheme() {
+      const root = document.documentElement;
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      const meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', next === 'dark' ? '#0a192f' : '#f7f8fb');
+      syncThemeButton();
+    }
+
+    function syncThemeButton() {
+      const btn = document.getElementById('theme-toggle');
+      if (!btn) return;
+      const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.setAttribute('aria-pressed', String(dark));
+      btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+    syncThemeButton();
+
     // ── Project Data ──
     const PROJECTS = {
       'gole-fms': {
@@ -1613,8 +1770,8 @@
           'Live state arrives over a <strong>WebSocket feed</strong> (snapshot + incremental updates, render throttling, and exponential-backoff auto-reconnection for unattended sites). Robot and elevator commands go out over the <strong>MQTT-based VDA5050 AMR standard</strong>, and every command is written to the database before transmission so nothing is silently lost.',
           'Operators author missions in a <strong>visual scenario editor</strong>: they upload and edit SLAM maps, place navigation nodes (with drag-set headings), and compose explicit routes. Coordinates are stored as resolution-independent 0–1 ratios, and each scenario is reviewed and validated as YAML before being compiled into <strong>VDA5050 orders</strong>.',
           '<strong>Cargo (roll-container) tracking</strong> is the most-used feature in the system — a complete pickup/drop-off history with photos the robot captures automatically at every handover, per-robot throughput analytics, recurring schedules, and elevator integration for multi-floor transport.',
-          'The backend is built on <strong>PostgreSQL</strong> with centrally queryable logging (method + path + status) and audit logs, <strong>role-based access control</strong> (admin / employee / client) enforced on both client and server, error handling that distinguishes network, authentication, and database failures, timestamps kept consistent in KST over UTC storage, and accessibility throughout (keyboard navigation, aria-live).',
-          'This work leads directly into the engineering problems I want to keep solving: turning large-scale fleet telemetry into operational judgment people can trust, and reliably transferring robot behavior learned in simulation (<strong>NVIDIA Isaac Sim / Isaac Lab</strong>) onto real robots.',
+          'The backend is built on <strong>PostgreSQL</strong> with centrally queryable logging (method + path + status) and audit logs, <strong>role-based access control</strong> (admin / employee / client) enforced on both client and server, error handling that distinguishes network, authentication, and database failures, timestamps stored in UTC and displayed consistently in KST, and accessibility throughout (keyboard navigation, aria-live).',
+          'This work feeds directly into the research questions I want to pursue: diagnosing faults across the layers of a fleet system, predicting failures from operational telemetry, and validating robot behavior in simulation (<strong>NVIDIA Isaac Sim / Isaac Lab</strong>) before it reaches the site.',
         ],
         features: [
           '<strong>Real-time fleet monitoring</strong> — robot positions on per-floor maps, mission progress, battery, alarms',
@@ -1668,7 +1825,7 @@
           'CRISK is a fintech platform for <strong>corporate carbon-risk analysis</strong>, used by companies and investors to assess climate-related financial risk. As the <strong>sole developer</strong>, I owned the entire stack from database design to frontend delivery.',
           'I built the core data pipeline: financial data arrives daily as text files over SMTP from <strong>KED (Korea Enterprise Data)</strong> and <strong>FnGuide</strong>, is processed and cleaned with Python and Pandas, and lands in a <strong>MySQL database</strong> I designed with optimized indexing.',
           'On top of this structured financial database, the system generates <strong>carbon-scenario projections</strong> for each company. I developed the FastAPI backend serving the financial data and report endpoints.',
-          'The web service (<a href="https://www.crisk.co.kr/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(100,255,218,0.3);">crisk.co.kr</a>) uses <strong>Spring Boot</strong> for authentication, email, and user management and <strong>FastAPI</strong> for the data-science-facing APIs — a split architecture that keeps the DS team\'s work in Python while handling production traffic reliably.',
+          'The web service (<a href="https://www.crisk.co.kr/" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--border-strong);">crisk.co.kr</a>) uses <strong>Spring Boot</strong> for authentication, email, and user management and <strong>FastAPI</strong> for the data-science-facing APIs — a split architecture that keeps the DS team\'s work in Python while handling production traffic reliably.',
           'I also built a <strong>chatbot feature</strong> integrated into the CRISK platform, letting users query financial and carbon-risk data interactively through a conversational interface.',
           'Working closely with the data science team, I analyzed their Jupyter notebooks to design the new financial DB structure and refactored a <strong>20,000+ line monolithic script</strong> into a modular report engine — cutting generation time <strong>from 10 minutes to 2</strong>.',
         ],
@@ -1699,14 +1856,14 @@
           'Credit Imbalance Tracker is a <strong>corporate financial-health visualization service</strong> used by major banks and asset appraisers to monitor financial-imbalance indicators.',
           'The project ran on a tight deadline, so I chose <strong>Next.js + Node.js + MySQL</strong> for fast full-stack development and applied <strong>TypeScript</strong> throughout for maintainability.',
           'For the data-visualization layer I brought in <strong>MUI Premium</strong> with its advanced chart components to deliver the dashboard quality the client expected. The UI handles complex financial indicators such as CIT Score, Industrial Risk, and Early Warning Signal.',
-          'Deployment was self-hosted: I purchased the domain via WHOIS and configured <strong>Nginx</strong> on an in-house server to proxy the Next.js app, keeping full control of the infrastructure.',
+          'Deployment was self-hosted: I registered the domain and configured <strong>Nginx</strong> on an in-house server to proxy the Next.js app, keeping full control of the infrastructure.',
         ],
         features: [
           'Financial-imbalance dashboard used by <strong>major Korean banks and asset appraisers</strong>',
           '<strong>MUI Premium</strong> advanced charts — gauge meters, time series, indicator grids',
           'Indicators: CIT Score, Industrial Risk, Audit Risk, Early Warning Signal, Credit Shock Indicator',
           '<strong>Next.js + Node.js</strong> full stack, TypeScript end to end',
-          'Self-hosted deployment with a <strong>WHOIS domain + Nginx</strong>',
+          'Self-hosted deployment — <strong>own domain with an Nginx reverse proxy</strong>',
         ],
         stack: ['Next.js', 'Node.js', 'TypeScript', 'MUI Premium', 'MySQL', 'Nginx'],
       },
