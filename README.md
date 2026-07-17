@@ -1,6 +1,6 @@
 # hurjun.github.io
 
-Personal portfolio website for Jun Hur (허준) — a software engineer with 6+ years across robotics, fintech, and healthcare, focused on autonomous-robot fleet operations, multi-robot path planning, and sim-to-real. The site content is written in English, emphasizing reliable, well-engineered software in safety-critical environments.
+Personal portfolio website for Jun Hur (허준) — a software engineer building production systems across robotics, fintech, and healthcare since 2021, focused on the reliability of cyber-physical systems: cross-layer fault diagnosis, failure prediction from operational telemetry, and simulation-based validation before deployment. The site is written in English for a US graduate-admissions audience and mirrors the narrative of the statement of purpose. It ships a light theme by default with a dark-mode toggle.
 
 🔗 **Live site:** [hurjun.github.io](https://hurjun.github.io)
 
@@ -10,12 +10,12 @@ A single-page portfolio built with vanilla HTML, CSS, and JavaScript. No framewo
 
 ## Sections
 
-- **Interests** — field automation, multi-robot coordination, sim-to-real, digital twins, real-time monitoring
-- **About** — background and key highlights
+- **Research Interests** — three research questions (cross-layer fault diagnosis, failure prediction from telemetry, simulation-based pre-deployment validation), each rooted in an operated system
+- **About** — the power-plant patrol failure story, the deterministic-software thesis, and the graduate-study goal
 - **Skills** — languages, frameworks, cloud, databases, tools
-- **Experience** — work history with tech stacks
+- **Experience** — work history with tech stacks, including the operational incidents behind each research question
 - **Projects** — 8 project cards with full-screen detail overlay, screenshots, and links, plus a **Selected Open-Source Projects** list linking the strongest GitHub repos (`github.com/hurjun`)
-- **Education** — degree and certification
+- **Education** — degree (with full-time-work context) and the 2017 KIISE Grand Prize (Reacord)
 
 ## Local Development
 
