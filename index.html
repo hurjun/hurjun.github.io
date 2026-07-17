@@ -1114,13 +1114,10 @@
         <h1 class="hero-name">Jun Hur</h1>
         <h2 class="hero-title">I build software that keeps robot fleets running in the real world.</h2>
         <p class="hero-desc">
-          For 5+ years I have built production systems whose failures have physical
-          consequences — robot fleets in hospitals, power plants, and construction
-          sites — as well as data platforms in fintech and healthcare. That
-          experience converged on one goal: engineering cyber-physical systems that
-          are diagnosable across layers, predictable from telemetry, and validated
-          in simulation before deployment — the research I am preparing to pursue
-          in graduate school.
+          For 5+ years I have built production systems across robotics, fintech,
+          and healthcare — robot fleet control platforms, financial data pipelines,
+          and clinical software. I am applying to US CS master's programs in
+          software engineering for cyber-physical systems.
         </p>
         <div class="hero-links">
           <span class="hero-email">
@@ -1149,31 +1146,27 @@
   <section id="research">
     <h2 class="section-title"><span class="section-number">01.</span> Research Interests</h2>
     <p class="research-intro">
-      Years spent operating robot fleets and financial data pipelines — and building clinical software —
-      kept teaching me the same lesson: <strong>software is deterministic, but the world it runs in is
-      not</strong>. The same code under the same conditions delivered an MQTT message only two times out
-      of three; an overheated camera flooded the control screen with green; a company name slipped into
-      an integer-only database column and froze production. Rather than fixing such failures one at a
-      time, I want to study general methods for <strong>engineering reliable cyber-physical
-      systems</strong>. Three questions drive that goal, each rooted in a system I built and operated.
+      My work sits where software meets the physical world. More than five years of building and
+      operating robot fleets, financial data pipelines, and clinical software in production led me to
+      three research interests in <strong>software engineering for cyber-physical systems</strong>:
     </p>
     <div class="research-grid">
       <div class="research-card">
-        <h3><span class="r-num">01</span> Diagnosis — Cross-Layer Fault Localization</h3>
-        <p>When a robot fails silently, the cause can hide in any of five layers: the control frontend, the backend, the MQTT broker, the robot's ROS stack, or the site network. What observability data and causal models does it take to localize such faults automatically — instead of three teams reconciling logs for half a day?</p>
+        <h3><span class="r-num">01</span> Fault Diagnosis Across System Layers</h3>
+        <p>Failures in fleet systems span the control frontend, backend, message broker, robot software, and site network. I am interested in observability and fault-localization techniques that trace causes across these layers — a problem I faced daily while operating 30+ robots in production.</p>
       </div>
       <div class="research-card">
-        <h3><span class="r-num">02</span> Prevention — Failure Prediction from Telemetry</h3>
-        <p>Operating 30+ robots, I found that anomalies in MQTT message frequency preceded customers' failure reports — an indirect signal, not an error log. How far do early-warning signals like this generalize, and how can operational telemetry predict failures before they become incidents?</p>
+        <h3><span class="r-num">02</span> Failure Prediction from Operational Telemetry</h3>
+        <p>At DOGU Robotics I found that anomalies in MQTT message frequency repeatedly preceded customer failure reports, and built monitoring around that signal with no added instrumentation. I am interested in how far such early-warning indicators generalize across systems.</p>
       </div>
       <div class="research-card">
-        <h3><span class="r-num">03</span> Validation — Simulation &amp; Digital Twins Before Deployment</h3>
-        <p>I validate robot behavior in NVIDIA Isaac Sim / Isaac Lab with domain randomization, and have built a from-scratch MAPF simulator that sizes robot fleets and elevators before construction-site deployment. How do we generate the rare scenarios that matter, and quantify what a passing simulation actually guarantees about field reliability?</p>
+        <h3><span class="r-num">03</span> Simulation-Based Validation Before Deployment</h3>
+        <p>I validate robot behavior in NVIDIA Isaac Sim / Isaac Lab with domain randomization and have built a from-scratch MAPF simulator for pre-deployment fleet sizing. I am interested in scenario generation and in quantifying what simulation results guarantee about field reliability.</p>
       </div>
     </div>
     <p class="research-foundations">
-      Engineering foundations behind these questions: real-time fleet control (MQTT · VDA5050 · WebSocket),
-      multi-robot path planning (MAPF), reinforcement learning and sim-to-real on Isaac Sim / Isaac Lab,
+      Supporting foundations: real-time fleet control (MQTT · VDA5050 · WebSocket), multi-robot path
+      planning (MAPF), reinforcement learning and sim-to-real transfer in Isaac Sim / Isaac Lab,
       digital twins, and large-scale telemetry monitoring.
     </p>
   </section>
@@ -1184,29 +1177,27 @@
     <div class="about-grid">
       <div>
         <p class="about-text">
-          One morning a customer called before our monitoring did: <strong>their robot hadn't moved all
-          night</strong>. Its 2 a.m. outdoor patrol at a power plant — a circuit of the grounds,
-          monitoring for hazardous gas — had never started. The command had vanished silently in one of
-          five layers: the control frontend, the backend, the MQTT broker, the robot's ROS stack, or the
-          site network — and no one at the company could see all five at once. Three teams spent half a
-          day reconciling separate logs before we found the cause.
+          I am a software engineer at <strong>GoLe Robotics</strong>, building the fleet management
+          system for autonomous robots on construction sites and validating robot behavior in NVIDIA
+          Isaac Sim / Isaac Lab before deployment. Previously, I was the <strong>sole developer</strong>
+          at the fintech startup <strong>Niflers</strong>, where I owned the full stack behind
+          <strong>200,000+ auto-generated corporate carbon-risk reports</strong>. Before that, I led web
+          development for robot fleet control at <strong>DOGU Robotics</strong>, operating <strong>30+
+          robots across 10+ sites</strong> for clients including Hyundai, SK hynix, and GS EPS.
         </p>
         <p class="about-text">
-          I had joined as a frontend developer, and I couldn't accept that half-day. I studied the
-          backend, the database, and ROS after hours until, two years later, I was the only engineer in
-          the company who could trace a failure alone from the control screen down into the robot. The
-          same pattern followed me from robot fleet control at <strong>DOGU Robotics</strong>, to fintech
-          data platforms at <strong>Niflers</strong>, to autonomous-robot fleet management and simulation
-          at <strong>GoLe Robotics</strong>. School taught me that computers do what the code says; the
-          field disproved it daily.
+          Alongside production work, I have kept building fundamentals on my own: re-implementing the
+          <strong>Transformer</strong> and <strong>xLSTM</strong> from the original papers, writing a
+          <strong>multi-robot path-planning (MAPF) simulator</strong> from scratch in TypeScript, and
+          measuring everything — my undergraduate thesis quantified a <strong>96% reduction</strong> in
+          nursing-documentation time, and my open-source repositories report reproducible benchmark
+          numbers. In 2017, my real-time lecture-transcription app for deaf and hard-of-hearing
+          classmates won the <strong>KIISE Grand Prize</strong>.
         </p>
         <p class="about-text">
-          Across all three companies, one conclusion held: <strong>reliability is not a property of
-          correct code, but of design that assumes failure</strong> — observability, data integrity, and
-          validation before change. I now want to move beyond fixing failures one at a time and study
-          generalizable methods. I am preparing for graduate study in the US — an MS leading to a PhD —
-          with research on making cyber-physical systems diagnosable, predictable, and validated before
-          deployment.
+          I am applying to US master's programs in computer science to study the
+          <strong>reliability of cyber-physical systems</strong> — fault diagnosis, failure prediction,
+          and simulation-based validation — with the goal of continuing on to a PhD.
         </p>
       </div>
       <div class="about-highlights">
@@ -1313,9 +1304,9 @@
             <li>Building the full stack of the <strong>fleet management system (FMS)</strong> for autonomous mobile robots — the operations console that monitors and controls a fleet of delivery robots and service elevators.</li>
             <li>Implemented real-time control and monitoring over the <strong>MQTT-based VDA5050 AMR standard</strong> with <strong>WebSocket live feeds</strong> — snapshot-plus-incremental updates, render throttling, and automatic backoff reconnection for unattended sites.</li>
             <li>Built a <strong>visual scenario editor</strong> where operators draw over SLAM maps and place direction-aware navigation nodes to compose routes — saved missions are validated and compiled into <strong>VDA5050 orders</strong> using resolution-independent coordinates.</li>
-            <li>Designed <strong>cargo (roll-container) tracking</strong>, the most-used feature in the system — pickup/drop-off history with automatically captured photos, per-robot throughput analytics, recurring schedules, and elevator-integrated multi-floor delivery.</li>
-            <li>Designed the <strong>PostgreSQL</strong> backend with <strong>role-based access control</strong> (admin/employee/client, enforced on both client and server) and centralized logging that distinguishes network, authentication, and database failures — <strong>designed in from day one rather than added after incidents</strong>, so operational issues are traceable directly from the database.</li>
-            <li>Working on <strong>sim-to-real</strong> in the <strong>NVIDIA robotics ecosystem</strong> — building simulation environments in <strong>Isaac Sim / Isaac Lab</strong>, designing <strong>reinforcement learning</strong> training pipelines, and using world foundation models (NVIDIA Cosmos) with domain randomization — <strong>validating robot behavior before it reaches the site</strong>.</li>
+            <li>Designed <strong>cargo (roll-container) tracking</strong> — pickup/drop-off history with automatically captured photos, per-robot throughput analytics, recurring schedules, and elevator-integrated multi-floor delivery.</li>
+            <li>Designed the <strong>PostgreSQL</strong> backend with <strong>role-based access control</strong> (admin/employee/client, enforced on both client and server) and centralized logging that distinguishes network, authentication, and database failures — operational issues are traceable directly from the database.</li>
+            <li>Working on <strong>sim-to-real transfer</strong>: building <strong>Isaac Sim / Isaac Lab</strong> environments that replicate our deployment sites, with <strong>reinforcement learning</strong> training pipelines and domain randomization in progress — validating robot behavior before it reaches the site.</li>
           </ul>
         </div>
       </div>
@@ -1337,7 +1328,7 @@
             <li><strong>Sole owner of all web development</strong> — frontend, backend, infrastructure, and deployment.</li>
             <li>Designed MySQL schemas and indexing for <strong>KED and FnGuide</strong> financial data, with a daily automated ingestion pipeline running on Docker + Nginx on Linux.</li>
             <li>Refactored a <strong>20,000+ line monolithic script</strong>, cutting report generation time <strong>from 10 minutes to 2</strong>.</li>
-            <li>Learned reliability the hard way through <strong>two production incidents</strong>: a 20-process parallel loader wrote a company name into an integer-constrained column and froze the database, and a framework upgrade silently broke every API overnight — neither was a coding problem, and both reshaped how I design for <strong>data integrity, observability, and validated change</strong>.</li>
+            <li>Diagnosed and resolved <strong>two production incidents</strong> — a data-integrity failure during 20-process parallel loading and a framework upgrade that broke every API — experience that shapes how I design for <strong>data integrity and observability</strong>.</li>
             <li>Built a carbon-risk reporting system that auto-generates <strong>200,000+ corporate reports</strong> using Pandas, algorithmic optimization, and multiprocessing — scaled from 0 to 100 users.</li>
             <li>Developed backend APIs for <strong>crisk.co.kr</strong>: Spring Boot for authentication, email, and sign-up; FastAPI for financial data and report endpoints.</li>
             <li>Designed parallel pipelines on <strong>AWS ECS + Step Functions</strong> for daily financial data loads, with CI/CD via CodeCommit and CodeDeploy.</li>
@@ -1359,7 +1350,7 @@
           </div>
           <ul class="exp-bullets">
             <li>Built the fleet-control platform managing <strong>30+ robots across 10+ sites</strong> — hospitals, outdoor environments, and factories.</li>
-            <li>After a scheduled patrol was lost somewhere in a five-layer stack, taught myself the <strong>backend, database, and ROS</strong> after hours until I could trace a fault end to end — <strong>from the control screen to the robot's internals</strong>.</li>
+            <li>Debugged incidents <strong>end to end across the control frontend, backend, MQTT broker, and robot ROS layers</strong> — teaching myself each layer beyond my original frontend role.</li>
             <li>Implemented <strong>WebRTC video streaming</strong> and <strong>MQTT-based</strong> robot control and monitoring, with <strong>Grafana dashboards</strong> for data visualization.</li>
             <li>Discovered that <strong>anomalies in MQTT message frequency often predicted robot failures before customers reported them</strong>, and built monitoring around that signal — with no extra instrumentation — so engineers could respond <strong>proactively</strong> instead of waiting for complaints.</li>
             <li>Shipped <strong>branching diagnostic scripts</strong> that field engineers used to localize faults by elimination — battery, then network, then software.</li>
@@ -1423,7 +1414,7 @@
         <div class="project-icon" aria-hidden="true">🩺</div>
         <div class="project-name">Clinical Documentation Assistant (STT)</div>
         <div class="project-company">@ Healthcare AI Project</div>
-        <p class="project-desc">AI speech-to-text platform that turns clinical conversations into structured records to reduce manual charting — designed to fit existing clinical workflows, not just maximize transcription accuracy.</p>
+        <p class="project-desc">AI speech-to-text platform that turns clinical conversations into structured records to reduce manual charting — backend services and AI-integration workflow.</p>
         <div class="project-tags">
           <span class="tag">Python</span><span class="tag">Speech-to-Text</span><span class="tag">LLM</span><span class="tag">Backend</span><span class="tag">Healthcare</span>
         </div>
@@ -1510,10 +1501,10 @@
     <!-- SELECTED OPEN-SOURCE PROJECTS -->
     <h3 class="oss-subhead">Selected Open-Source Projects</h3>
     <p class="oss-intro">
-      Projects on <a href="https://github.com/hurjun" target="_blank" rel="noopener">github.com/hurjun</a> where
-      I dig into the research questions above and the foundations beneath them &mdash; multi-robot coordination,
-      simulation-based validation, sequence models, and efficient ML systems. Every repository is reproducible and
-      tested, and the numbers below are actual measurements recorded in each README.
+      Projects on <a href="https://github.com/hurjun" target="_blank" rel="noopener">github.com/hurjun</a> in
+      the areas above &mdash; multi-robot coordination, simulation-based validation, sequence models, and
+      efficient ML systems. Each repository documents how to reproduce its results, and the numbers below
+      are actual measurements recorded in each README.
     </p>
     <div class="oss-grid">
 
@@ -1522,7 +1513,7 @@
           <span class="oss-name">MAPF Fleet &mdash; Multi-Robot Construction Site Simulator</span>
           <span class="oss-repo">GitHub ↗</span>
         </div>
-        <p class="oss-desc">Real-time 3D simulation of multi-robot fleets on multi-floor sites. Features a <strong>MAPF engine implemented from scratch in TypeScript</strong> (windowed cooperative A*, Conflict-Based Search), capacity-limited elevators, and live fleet-size optimization. Sustained <strong>zero collisions across 66 headless benchmark runs / 21,000+ simulation ticks</strong>. The origin of my third research question: validating a deployment in simulation before it happens.</p>
+        <p class="oss-desc">Real-time 3D simulation of multi-robot fleets on multi-floor sites. Features a <strong>MAPF engine implemented from scratch in TypeScript</strong> (windowed cooperative A*, Conflict-Based Search), capacity-limited elevators, and live fleet-size optimization. Sustained <strong>zero collisions across 66 headless benchmark runs / 21,000+ simulation ticks</strong>.</p>
         <div class="oss-tags">
           <span class="tag">TypeScript</span><span class="tag">Next.js</span><span class="tag">React Three Fiber</span><span class="tag">MAPF</span>
         </div>
@@ -1693,9 +1684,8 @@
           'At <strong>GoLe Robotics</strong> I am building the full stack of the <strong>fleet management system (FMS)</strong> for autonomous mobile robots — the internal operations console where staff run an entire fleet of delivery robots and service elevators from a single screen.',
           'Live state arrives over a <strong>WebSocket feed</strong> (snapshot + incremental updates, render throttling, and exponential-backoff auto-reconnection for unattended sites). Robot and elevator commands go out over the <strong>MQTT-based VDA5050 AMR standard</strong>, and every command is written to the database before transmission so nothing is silently lost.',
           'Operators author missions in a <strong>visual scenario editor</strong>: they upload and edit SLAM maps, place navigation nodes (with drag-set headings), and compose explicit routes. Coordinates are stored as resolution-independent 0–1 ratios, and each scenario is reviewed and validated as YAML before being compiled into <strong>VDA5050 orders</strong>.',
-          '<strong>Cargo (roll-container) tracking</strong> is the most-used feature in the system — a complete pickup/drop-off history with photos the robot captures automatically at every handover, per-robot throughput analytics, recurring schedules, and elevator integration for multi-floor transport.',
+          '<strong>Cargo (roll-container) tracking</strong> provides a complete pickup/drop-off history with photos the robot captures automatically at every handover, per-robot throughput analytics, recurring schedules, and elevator integration for multi-floor transport.',
           'The backend is built on <strong>PostgreSQL</strong> with centrally queryable logging (method + path + status) and audit logs, <strong>role-based access control</strong> (admin / employee / client) enforced on both client and server, error handling that distinguishes network, authentication, and database failures, timestamps stored in UTC and displayed consistently in KST, and accessibility throughout (keyboard navigation, aria-live).',
-          'This work feeds directly into the research questions I want to pursue: diagnosing faults across the layers of a fleet system, predicting failures from operational telemetry, and validating robot behavior in simulation (<strong>NVIDIA Isaac Sim / Isaac Lab</strong>) before it reaches the site.',
         ],
         features: [
           '<strong>Real-time fleet monitoring</strong> — robot positions on per-floor maps, mission progress, battery, alarms',
@@ -1722,15 +1712,12 @@
         images: [],
         description: [
           'An <strong>AI speech-to-text platform</strong> that supports clinical documentation by converting conversations and spoken notes into <strong>structured text</strong> — reducing the burden on clinicians of writing everything down during and after patient encounters.',
-          'My role centered on the <strong>backend services and AI-integration workflow</strong> — the part that connects speech recognition output to the downstream documentation process.',
-          'The most important lesson was that <strong>transcription accuracy alone is not enough</strong>. Talking with clinicians, I learned the real goal was to reduce documentation burden <strong>without disrupting existing clinical workflows</strong>. Even a perfect transcript is worth little if it needs heavy editing or does not fit how people actually work.',
-          'This project deepened my interest in <strong>human-centered, domain-specific AI</strong> — systems that do not just automate tasks, but help people focus on what matters most.',
+          'My role centered on the <strong>backend services and AI-integration workflow</strong> — the part that connects speech recognition output to the downstream documentation process. Requirements were shaped through direct discussions with clinicians, prioritizing fit with existing clinical workflows over raw transcription accuracy.',
         ],
         features: [
           '<strong>Speech-to-text (STT)</strong> that turns clinical conversations into structured records',
           '<strong>Backend services + AI integration</strong> connecting recognition output to documentation',
-          'Workflow-friendly design validated through <strong>discussions with clinicians</strong>',
-          'Focused on <strong>reducing documentation burden</strong>, not just transcription accuracy',
+          'Workflow requirements gathered through <strong>discussions with clinicians</strong>',
         ],
         stack: ['Python', 'Speech-to-Text', 'LLM', 'Backend', 'AI Integration', 'Healthcare'],
       },

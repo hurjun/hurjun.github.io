@@ -10,10 +10,10 @@ A single-page portfolio built with vanilla HTML, CSS, and JavaScript. No framewo
 
 ## Sections
 
-- **Research Interests** — three research questions (cross-layer fault diagnosis, failure prediction from telemetry, simulation-based pre-deployment validation), each rooted in an operated system
-- **About** — the power-plant patrol failure story, the deterministic-software thesis, and the graduate-study goal
+- **Research Interests** — three research interests (cross-layer fault diagnosis, failure prediction from telemetry, simulation-based pre-deployment validation), each grounded in a system I built and operated
+- **About** — compact professional bio: current work, self-directed study of fundamentals, and the graduate-study goal
 - **Skills** — languages, frameworks, cloud, databases, tools
-- **Experience** — work history with tech stacks, including the operational incidents behind each research question
+- **Experience** — work history with tech stacks and measurable outcomes
 - **Projects** — 8 project cards with full-screen detail overlay, screenshots, and links, plus a **Selected Open-Source Projects** list linking the strongest GitHub repos (`github.com/hurjun`)
 - **Education** — degree (with full-time-work context) and the 2017 KIISE Grand Prize (Reacord)
 
